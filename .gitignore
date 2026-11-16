@@ -1,0 +1,8 @@
+/AGENTS.md
+/DECISIONS.md
+.gradle/
+build/
+run/
+run-server/
+*.log
+.idea/
