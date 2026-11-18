@@ -1,6 +1,7 @@
 package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.block.BerryBushBlock;
+import dev.oculifelis.ganys.block.EnderFlowerBlock;
 import dev.oculifelis.ganys.block.GlowingReedBlock;
 import dev.oculifelis.ganys.block.NetherCropBlock;
 import dev.oculifelis.ganys.block.TilledNetherrackBlock;
@@ -15,6 +16,8 @@ import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TransparentBlock;
+import net.minecraft.world.level.block.WallBlock;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.neoforge.registries.DeferredBlock;
@@ -61,6 +64,26 @@ public final class GanysBlocks {
             QUARTZ.add(BLOCKS.registerBlock(d + "_quartz_stairs", p -> new StairBlock(block.get().defaultBlockState(), p),
                     () -> Properties.ofFullCopy(Blocks.QUARTZ_STAIRS).mapColor(dye)));
         }
+    }
+
+    // Gany's End and Gany's Nether metals. Explosion resistance is the 1.7.10 value times 3/5.
+    public static final DeferredBlock<Block> RAW_ENDIUM = BLOCKS.registerBlock("raw_endium", Block::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(51.0F, 1200.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+    public static final DeferredBlock<Block> ENDIUM_BLOCK = BLOCKS.registerBlock("endium_block", Block::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(0.2F, 0.3F).sound(SoundType.METAL));
+    public static final DeferredBlock<Block> ENDER_PEARL_BLOCK = BLOCKS.registerBlock("ender_pearl_block", Block::new,
+            () -> pearl());
+    public static final DeferredBlock<StairBlock> ENDER_PEARL_STAIRS = BLOCKS.registerBlock("ender_pearl_stairs",
+            p -> new StairBlock(ENDER_PEARL_BLOCK.get().defaultBlockState(), p), () -> pearl());
+    public static final DeferredBlock<WallBlock> ENDER_PEARL_WALL = BLOCKS.registerBlock("ender_pearl_wall", WallBlock::new,
+            () -> pearl().forceSolidOn());
+    public static final DeferredBlock<EnderFlowerBlock> ENDER_FLOWER = BLOCKS.registerBlock("ender_flower", EnderFlowerBlock::new,
+            () -> Properties.ofFullCopy(Blocks.DANDELION).mapColor(MapColor.COLOR_PURPLE).lightLevel(s -> 4));
+    public static final DeferredBlock<Block> BLAZE_BLOCK = BLOCKS.registerBlock("blaze_block", Block::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(5.0F, 6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+
+    private static Properties pearl() {
+        return Properties.of().mapColor(MapColor.COLOR_CYAN).instrument(NoteBlockInstrument.BASEDRUM).strength(1.5F, 6.0F).requiresCorrectToolForDrops();
     }
 
     private GanysBlocks() {

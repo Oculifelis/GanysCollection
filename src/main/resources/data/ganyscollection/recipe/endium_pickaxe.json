@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    " y ",
+    " y "
+  ],
+  "key": {
+    "x": "ganyscollection:endium_ingot",
+    "y": "ganyscollection:endstone_rod"
+  },
+  "result": {
+    "id": "ganyscollection:endium_pickaxe",
+    "count": 1
+  }
+}

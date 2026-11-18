@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:ender_pearl"
+  },
+  "result": {
+    "id": "ganyscollection:ender_pearl_block",
+    "count": 1
+  }
+}

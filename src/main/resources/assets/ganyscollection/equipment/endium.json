@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "ganyscollection:endium"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "ganyscollection:endium"
+      }
+    ]
+  }
+}

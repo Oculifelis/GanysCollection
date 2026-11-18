@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x",
+    "x",
+    "x"
+  ],
+  "key": {
+    "x": "minecraft:blaze_rod"
+  },
+  "result": {
+    "id": "ganyscollection:raw_blaze_ingot",
+    "count": 1
+  }
+}

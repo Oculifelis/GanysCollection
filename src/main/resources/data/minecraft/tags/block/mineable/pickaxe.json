@@ -65,6 +65,12 @@
     "ganyscollection:green_quartz_stairs",
     "ganyscollection:red_quartz_stairs",
     "ganyscollection:black_quartz_stairs",
-    "ganyscollection:tilled_netherrack"
+    "ganyscollection:tilled_netherrack",
+    "ganyscollection:raw_endium",
+    "ganyscollection:endium_block",
+    "ganyscollection:ender_pearl_block",
+    "ganyscollection:ender_pearl_stairs",
+    "ganyscollection:ender_pearl_wall",
+    "ganyscollection:blaze_block"
   ]
 }
