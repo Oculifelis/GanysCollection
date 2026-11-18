@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage0"
+    },
+    "age=1": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage0"
+    },
+    "age=2": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage1"
+    },
+    "age=3": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage1"
+    },
+    "age=4": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage2"
+    },
+    "age=5": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage2"
+    },
+    "age=6": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage2"
+    },
+    "age=7": {
+      "model": "ganyscollection:block/quartz_berry_bush_stage3"
+    }
+  }
+}

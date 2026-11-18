@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:soul_glass"
+  },
+  "result": {
+    "id": "ganyscollection:soul_glass_pane",
+    "count": 16
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:soul_glass"
+  },
+  "result": {
+    "id": "ganyscollection:soul_glass_stairs",
+    "count": 4
+  }
+}

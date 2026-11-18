@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "ganyscollection:block/white_chiseled_quartz_block",
+    "end": "ganyscollection:block/white_chiseled_quartz_block_top"
+  }
+}

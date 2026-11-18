@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x  ",
+    "xx ",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:pink_quartz_block"
+  },
+  "result": {
+    "id": "ganyscollection:pink_quartz_stairs",
+    "count": 4
+  }
+}

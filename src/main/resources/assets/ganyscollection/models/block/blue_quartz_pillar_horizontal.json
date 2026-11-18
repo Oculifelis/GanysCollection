@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "ganyscollection:block/blue_quartz_pillar",
+    "end": "ganyscollection:block/blue_quartz_pillar_top"
+  }
+}

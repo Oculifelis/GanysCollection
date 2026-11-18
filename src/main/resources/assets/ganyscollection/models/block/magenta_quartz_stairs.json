@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "ganyscollection:block/magenta_quartz_block_top",
+    "top": "ganyscollection:block/magenta_quartz_block_top",
+    "side": "ganyscollection:block/magenta_quartz_block_side"
+  }
+}

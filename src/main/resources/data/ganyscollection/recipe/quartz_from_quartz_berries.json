@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "yyy",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:quartz_berry",
+    "y": "minecraft:glass"
+  },
+  "result": {
+    "id": "minecraft:quartz",
+    "count": 6
+  }
+}

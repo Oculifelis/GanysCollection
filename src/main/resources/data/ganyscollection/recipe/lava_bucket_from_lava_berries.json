@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:lava_berry",
+    "y": "minecraft:bucket"
+  },
+  "result": {
+    "id": "minecraft:lava_bucket",
+    "count": 1
+  }
+}

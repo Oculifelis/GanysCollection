@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "yyy",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:spooky_flour",
+    "y": "minecraft:sand"
+  },
+  "result": {
+    "id": "minecraft:soul_sand",
+    "count": 6
+  }
+}

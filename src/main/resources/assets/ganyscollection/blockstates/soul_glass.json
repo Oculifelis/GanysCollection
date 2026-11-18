@@ -1,0 +1,15 @@
+{
+  "variants": {
+    "": {
+      "type": "ganyscollection:connected",
+      "textures": {
+        "isolated": "ganyscollection:block/soul_glass",
+        "all": "ganyscollection:block/soul_glass_ctm_all",
+        "h": "ganyscollection:block/soul_glass_ctm_h",
+        "v": "ganyscollection:block/soul_glass_ctm_v",
+        "inner": "ganyscollection:block/soul_glass_ctm_inner",
+        "particle": "ganyscollection:block/soul_glass"
+      }
+    }
+  }
+}

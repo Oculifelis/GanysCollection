@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#ganyscollection:dyeable_chiseled_quartz_blocks",
+    "y": "minecraft:magenta_dye"
+  },
+  "result": {
+    "id": "ganyscollection:magenta_chiseled_quartz_block",
+    "count": 8
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#ganyscollection:dyeable_quartz_pillars",
+    "y": "minecraft:yellow_dye"
+  },
+  "result": {
+    "id": "ganyscollection:yellow_quartz_pillar",
+    "count": 8
+  }
+}

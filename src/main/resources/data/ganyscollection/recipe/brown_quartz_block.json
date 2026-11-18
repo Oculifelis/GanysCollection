@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#ganyscollection:dyeable_quartz_blocks",
+    "y": "minecraft:brown_dye"
+  },
+  "result": {
+    "id": "ganyscollection:brown_quartz_block",
+    "count": 8
+  }
+}

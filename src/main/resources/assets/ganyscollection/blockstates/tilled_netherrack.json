@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=1": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=2": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=3": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=4": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=5": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=6": {
+      "model": "ganyscollection:block/tilled_netherrack"
+    },
+    "moisture=7": {
+      "model": "ganyscollection:block/tilled_netherrack_moist"
+    }
+  }
+}

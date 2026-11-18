@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "ganyscollection:block/soul_glass",
+    "top": "ganyscollection:block/soul_glass",
+    "side": "ganyscollection:block/soul_glass"
+  },
+  "render_type": "minecraft:translucent"
+}

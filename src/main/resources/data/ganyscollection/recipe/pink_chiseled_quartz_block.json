@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#ganyscollection:dyeable_chiseled_quartz_blocks",
+    "y": "minecraft:pink_dye"
+  },
+  "result": {
+    "id": "ganyscollection:pink_chiseled_quartz_block",
+    "count": 8
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ganyscollection:wither_seeds"
+        }
+      ]
+    },
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:block_state_property",
+          "block": "ganyscollection:wither_shrub",
+          "properties": {
+            "age": "7"
+          }
+        },
+        {
+          "condition": "minecraft:random_chance",
+          "chance": 0.0125
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "ganyscollection:wither_seeds"
+        }
+      ]
+    }
+  ],
+  "random_sequence": "ganyscollection:blocks/wither_shrub"
+}
