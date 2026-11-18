@@ -17,6 +17,8 @@ repositories {
     mavenCentral()
     // Fundamentum, the shared core mod (local repo). Required dependency.
     maven { url = 'file:///H:/AI_MC_Modding/Fundamentum/repo'; content { includeGroup 'com.fundamentum' } }
+    // Fundamentum needs Curios at runtime.
+    maven { url = 'https://maven.theillusivec4.top/'; content { includeGroup 'top.theillusivec4.curios' } }
 }
 
 dependencies {
@@ -34,6 +36,12 @@ neoForge {
             server()
             gameDirectory = project.file('run-server')
             programArgument '--nogui'
+        }
+        // Boots a GameTest server, loads all mod data, runs any ganyscollection tests, then exits.
+        gameTestServer {
+            type = "gameTestServer"
+            gameDirectory = project.file('run-gametest')
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
         configureEach {
             logLevel = org.slf4j.event.Level.INFO
