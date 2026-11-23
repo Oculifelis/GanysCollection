@@ -5,6 +5,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.DispenserBlock;
+import dev.oculifelis.ganys.item.BottomlessBucketItem;
+import dev.oculifelis.ganys.item.InfiniteBucketItem;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
@@ -31,7 +35,15 @@ public class GanysCollection {
         GanysComponents.COMPONENTS.register(modBus);
         GanysEvents.register(modBus);
         NeoForge.EVENT_BUS.addListener(GanysCollection::till);
+        modBus.addListener(GanysCollection::setup);
         if (FMLEnvironment.getDist() == Dist.CLIENT) GanysClient.init(modBus);
+    }
+
+    private static void setup(FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            DispenserBlock.registerBehavior(GanysItems.BOTTOMLESS_BUCKET.get(), BottomlessBucketItem.DISPENSE);
+            DispenserBlock.registerBehavior(GanysItems.INFINITE_BUCKET.get(), InfiniteBucketItem.DISPENSE);
+        });
     }
 
     /** A hoe turns netherrack with air above it into tilled netherrack, unless another mod already claimed it. */

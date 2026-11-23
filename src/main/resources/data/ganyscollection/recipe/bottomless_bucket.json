@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "zxz",
+    "yzy"
+  ],
+  "key": {
+    "x": "minecraft:bucket",
+    "y": "minecraft:soul_sand",
+    "z": "minecraft:nether_brick"
+  },
+  "result": {
+    "id": "ganyscollection:bottomless_bucket",
+    "count": 1
+  }
+}

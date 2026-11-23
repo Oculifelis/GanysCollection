@@ -4,7 +4,9 @@ import java.util.function.Consumer;
 import dev.oculifelis.ganys.item.EnderScytheItem;
 import dev.oculifelis.ganys.item.EndiumBowItem;
 import dev.oculifelis.ganys.item.EndiumToolItem;
+import dev.oculifelis.ganys.item.BottomlessBucketItem;
 import dev.oculifelis.ganys.item.GanysArmorItem;
+import dev.oculifelis.ganys.item.InfiniteBucketItem;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Rarity;
@@ -108,6 +110,12 @@ public final class GanysItems {
     public static final DeferredItem<GanysArmorItem> WOODEN_CHESTPLATE = armor("wooden_chestplate", GanysArmorItem.Kind.WOOD, ArmorType.CHESTPLATE);
     public static final DeferredItem<GanysArmorItem> WOODEN_LEGGINGS = armor("wooden_leggings", GanysArmorItem.Kind.WOOD, ArmorType.LEGGINGS);
     public static final DeferredItem<GanysArmorItem> WOODEN_BOOTS = armor("wooden_boots", GanysArmorItem.Kind.WOOD, ArmorType.BOOTS);
+
+    // Gany's Nether bottomless bucket and Gany's End infinite water bucket; both always shimmer, as in the originals
+    public static final DeferredItem<BottomlessBucketItem> BOTTOMLESS_BUCKET = ITEMS.registerItem("bottomless_bucket", BottomlessBucketItem::new,
+            p -> p.stacksTo(1).rarity(Rarity.UNCOMMON).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
+    public static final DeferredItem<InfiniteBucketItem> INFINITE_BUCKET = ITEMS.registerItem("infinite_bucket", InfiniteBucketItem::new,
+            p -> p.stacksTo(1).rarity(Rarity.UNCOMMON).component(DataComponents.ENCHANTMENT_GLINT_OVERRIDE, true));
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("main", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.ganyscollection"))

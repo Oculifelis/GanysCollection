@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "zxz",
+    "yzy"
+  ],
+  "key": {
+    "x": "minecraft:water_bucket",
+    "y": "minecraft:ender_pearl",
+    "z": "#c:ingots/gold"
+  },
+  "result": {
+    "id": "ganyscollection:infinite_bucket",
+    "count": 1
+  }
+}
