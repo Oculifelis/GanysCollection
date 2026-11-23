@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " y ",
+    "yxy",
+    " y "
+  ],
+  "key": {
+    "x": "#c:dusts/glowstone",
+    "y": "#c:glass_panes"
+  },
+  "result": {
+    "id": "ganyscollection:yellow_glow_box",
+    "count": 4
+  }
+}

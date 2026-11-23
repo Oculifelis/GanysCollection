@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#ganyscollection:glow_boxes",
+    "y": "#c:dyes/lime"
+  },
+  "result": {
+    "id": "ganyscollection:lime_glow_box",
+    "count": 8
+  }
+}

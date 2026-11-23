@@ -1,0 +1,7 @@
+{
+  "parent": "ganyscollection:block/glow_box",
+  "textures": {
+    "side": "ganyscollection:block/black_glow_box_side",
+    "top": "ganyscollection:block/black_glow_box_top"
+  }
+}

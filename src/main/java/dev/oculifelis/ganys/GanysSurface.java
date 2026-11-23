@@ -2,6 +2,8 @@ package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.block.BlazingCactoidBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
+import dev.oculifelis.ganys.block.GlowBoxBlock;
+import dev.oculifelis.ganys.block.WeepingPodBlock;
 import dev.oculifelis.ganys.block.SoulTntBlock;
 import dev.oculifelis.ganys.entity.SoulPrimedTnt;
 import net.minecraft.world.entity.EntityType;
@@ -242,6 +244,24 @@ public final class GanysSurface {
     public static final DeferredItem<BlockItem> SOUL_TNT_ITEM = ITEMS.registerSimpleBlockItem(SOUL_TNT);
     public static final Supplier<EntityType<SoulPrimedTnt>> SOUL_TNT_ENTITY = ENTITIES.registerEntityType("soul_tnt",
             SoulPrimedTnt::new, MobCategory.MISC, b -> b.sized(0.98F, 0.98F).fireImmune().clientTrackingRange(10).updateInterval(10));
+
+    /** Weeping pod: grows on obsidian from a ghast tear and drops ghast tears; no item of its own. */
+    public static final DeferredBlock<WeepingPodBlock> WEEPING_POD = BLOCKS.registerBlock("weeping_pod", WeepingPodBlock::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).strength(0.2F, 5.0F).sound(SoundType.WOOD).randomTicks()
+                    .noOcclusion().pushReaction(PushReaction.DESTROY));
+
+    /** Glow boxes: a light-15 glass post in each dye colour. */
+    public static final Map<DyeColor, DeferredBlock<GlowBoxBlock>> GLOW_BOXES = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredItem<BlockItem>> GLOW_BOX_ITEMS = new EnumMap<>(DyeColor.class);
+
+    static {
+        for (DyeColor c : DyeColor.values()) {
+            DeferredBlock<GlowBoxBlock> b = BLOCKS.registerBlock(c.getName() + "_glow_box", GlowBoxBlock::new,
+                    () -> Properties.of().mapColor(c.getMapColor()).strength(0.2F).sound(SoundType.GLASS).lightLevel(s -> 15).noOcclusion());
+            GLOW_BOXES.put(c, b);
+            GLOW_BOX_ITEMS.put(c, ITEMS.registerSimpleBlockItem(b));
+        }
+    }
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

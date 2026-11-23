@@ -44,6 +44,7 @@ public class GanysCollection {
         event.enqueueWork(() -> {
             DispenserBlock.registerBehavior(GanysItems.BOTTOMLESS_BUCKET.get(), BottomlessBucketItem.DISPENSE);
             DispenserBlock.registerBehavior(GanysItems.INFINITE_BUCKET.get(), InfiniteBucketItem.DISPENSE);
+            DispenserBlock.registerBehavior(net.minecraft.world.item.Items.GHAST_TEAR, dev.oculifelis.ganys.block.WeepingPodBlock.DISPENSE);
         });
     }
 

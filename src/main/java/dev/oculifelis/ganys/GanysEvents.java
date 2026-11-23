@@ -1,6 +1,7 @@
 package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.item.EnderScytheItem;
+import dev.oculifelis.ganys.block.WeepingPodBlock;
 import java.util.Collection;
 import java.util.Iterator;
 import net.minecraft.core.BlockPos;
@@ -50,11 +51,24 @@ public final class GanysEvents {
                 GanysSurface.SOUL_CHEST_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be)));
         IEventBus bus = NeoForge.EVENT_BUS;
         bus.addListener(GanysEvents::tag);
+        bus.addListener(GanysEvents::plantPod);
         bus.addListener(EventPriority.LOWEST, GanysEvents::livingDrops);
         bus.addListener(EventPriority.LOWEST, GanysEvents::blockDrops);
         bus.addListener(GanysEvents::lightning);
         bus.addListener(GanysEvents::bonemeal);
         bus.addListener(GanysEvents::fireproofChest);
+    }
+
+    /** Right-clicking the side of obsidian with a ghast tear plants a weeping pod there. */
+    private static void plantPod(PlayerInteractEvent.RightClickBlock event) {
+        ItemStack stack = event.getItemStack();
+        if (!stack.is(GanysTags.PLANTS_WEEPING_POD) || event.getFace() == null) return;
+        Level level = event.getLevel();
+        BlockPos pos = event.getPos().relative(event.getFace());
+        if (!WeepingPodBlock.plant(level, pos, event.getFace().getOpposite())) return;
+        if (!level.isClientSide()) stack.consume(1, event.getEntity());
+        event.setCanceled(true);
+        event.setCancellationResult(InteractionResult.SUCCESS);
     }
 
     /** Sneak + right-click an inventory with an endium tool or bow: its drops go there from now on. */
