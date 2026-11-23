@@ -2,6 +2,7 @@ package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.block.BlazingCactoidBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
+import dev.oculifelis.ganys.block.ChocolateCakeBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlockEntity;
 import dev.oculifelis.ganys.block.CamelliaCropBlock;
 import dev.oculifelis.ganys.block.ColouredRedstoneBlock;
@@ -213,6 +214,12 @@ public final class GanysSurface {
             () -> Properties.of().mapColor(MapColor.NETHER).strength(0.4F).lightLevel(s -> 12).sound(SoundType.WOOL)
                     .randomTicks().noOcclusion().pushReaction(PushReaction.DESTROY));
     public static final DeferredItem<BlockItem> BLAZING_CACTOID_ITEM = ITEMS.registerSimpleBlockItem(BLAZING_CACTOID);
+
+    /** Six slices, eaten with either mouse button; what a slice feeds is the block data map ganyscollection:cake_food. */
+    public static final DeferredBlock<ChocolateCakeBlock> CHOCOLATE_CAKE = BLOCKS.registerBlock("chocolate_cake", ChocolateCakeBlock::new,
+            () -> Properties.ofFullCopy(Blocks.CAKE).mapColor(MapColor.COLOR_BROWN));
+    public static final DeferredItem<BlockItem> CHOCOLATE_CAKE_ITEM = ITEMS.registerItem("chocolate_cake",
+            p -> new BlockItem(CHOCOLATE_CAKE.get(), p), p -> p.stacksTo(1).useBlockDescriptionPrefix());
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

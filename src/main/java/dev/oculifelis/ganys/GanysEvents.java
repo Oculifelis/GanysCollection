@@ -39,7 +39,10 @@ import org.jspecify.annotations.Nullable;
 /** Gany's End game events: inventory tagging, head drops, scythe charging, the endium chestplate and ender flower bone meal. */
 public final class GanysEvents {
     public static void register(IEventBus modBus) {
-        modBus.addListener((RegisterDataMapTypesEvent e) -> e.register(MobHead.DATA_MAP));
+        modBus.addListener((RegisterDataMapTypesEvent e) -> {
+            e.register(MobHead.DATA_MAP);
+            e.register(CakeFood.DATA_MAP);
+        });
         IEventBus bus = NeoForge.EVENT_BUS;
         bus.addListener(GanysEvents::tag);
         bus.addListener(EventPriority.LOWEST, GanysEvents::livingDrops);

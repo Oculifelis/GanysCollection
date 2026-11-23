@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "yzy",
+    "www"
+  ],
+  "key": {
+    "x": "minecraft:milk_bucket",
+    "y": "ganyscollection:chocolate_bar",
+    "z": "#c:eggs",
+    "w": "#c:crops/wheat"
+  },
+  "result": {
+    "id": "ganyscollection:chocolate_cake",
+    "count": 1
+  }
+}
