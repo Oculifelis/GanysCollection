@@ -1,5 +1,6 @@
 package dev.oculifelis.ganys;
 
+import dev.oculifelis.ganys.block.BlazingCactoidBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlockEntity;
 import dev.oculifelis.ganys.block.CamelliaCropBlock;
@@ -205,6 +206,13 @@ public final class GanysSurface {
             ITEMS.registerSimpleBlockItem(b);
         }
     }
+
+    // tranche C
+    /** Nether cactus that grows on netherrack and sets what touches it alight. */
+    public static final DeferredBlock<BlazingCactoidBlock> BLAZING_CACTOID = BLOCKS.registerBlock("blazing_cactoid", BlazingCactoidBlock::new,
+            () -> Properties.of().mapColor(MapColor.NETHER).strength(0.4F).lightLevel(s -> 12).sound(SoundType.WOOL)
+                    .randomTicks().noOcclusion().pushReaction(PushReaction.DESTROY));
+    public static final DeferredItem<BlockItem> BLAZING_CACTOID_ITEM = ITEMS.registerSimpleBlockItem(BLAZING_CACTOID);
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

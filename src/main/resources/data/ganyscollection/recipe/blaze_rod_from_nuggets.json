@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x",
+    "x",
+    "x"
+  ],
+  "key": {
+    "x": "ganyscollection:blaze_nugget"
+  },
+  "result": {
+    "id": "minecraft:blaze_rod",
+    "count": 1
+  }
+}

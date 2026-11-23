@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "ganyscollection:blazing_cactoid",
+  "result": {
+    "id": "ganyscollection:blaze_nugget"
+  },
+  "experience": 1.0,
+  "cookingtime": 200
+}
