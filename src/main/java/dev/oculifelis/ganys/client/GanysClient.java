@@ -15,6 +15,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.ComputeFovModifierEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.common.NeoForge;
 
@@ -22,7 +23,12 @@ public final class GanysClient {
     public static void init(IEventBus modBus) {
         modBus.addListener(ConnectedGlassModel::register);
         modBus.addListener(GanysClient::tints);
+        modBus.addListener(GanysClient::renderers);
         NeoForge.EVENT_BUS.addListener(GanysClient::fov);
+    }
+
+    private static void renderers(EntityRenderersEvent.RegisterRenderers event) {
+        event.registerBlockEntityRenderer(GanysSurface.SOUL_CHEST_ENTITY.get(), SoulChestRenderer::new);
     }
 
     /** Leaf walls take the tint of the leaf they are made from; coloured dust takes its dye colour, dimmed by power. */

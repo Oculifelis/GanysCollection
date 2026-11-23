@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyx",
+    "x x",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:soul_sand",
+    "y": "#c:gems/quartz"
+  },
+  "result": {
+    "id": "ganyscollection:soul_chest",
+    "count": 1
+  }
+}

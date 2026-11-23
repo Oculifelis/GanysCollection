@@ -2,6 +2,8 @@ package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.block.BlazingCactoidBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
+import dev.oculifelis.ganys.block.SoulChestBlock;
+import dev.oculifelis.ganys.block.SoulChestBlockEntity;
 import dev.oculifelis.ganys.block.ChocolateCakeBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlockEntity;
 import dev.oculifelis.ganys.block.CamelliaCropBlock;
@@ -220,6 +222,13 @@ public final class GanysSurface {
             () -> Properties.ofFullCopy(Blocks.CAKE).mapColor(MapColor.COLOR_BROWN));
     public static final DeferredItem<BlockItem> CHOCOLATE_CAKE_ITEM = ITEMS.registerItem("chocolate_cake",
             p -> new BlockItem(CHOCOLATE_CAKE.get(), p), p -> p.stacksTo(1).useBlockDescriptionPrefix());
+
+    /** Soul sand chest: pulls in items that touch it and slows anything else on it. */
+    public static final DeferredBlock<SoulChestBlock> SOUL_CHEST = BLOCKS.registerBlock("soul_chest", SoulChestBlock::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_BROWN).strength(2.5F).sound(SoundType.SOUL_SAND));
+    public static final DeferredItem<BlockItem> SOUL_CHEST_ITEM = ITEMS.registerSimpleBlockItem(SOUL_CHEST);
+    public static final Supplier<BlockEntityType<SoulChestBlockEntity>> SOUL_CHEST_ENTITY = BLOCK_ENTITIES.register("soul_chest",
+            () -> new BlockEntityType<>(SoulChestBlockEntity::new, SOUL_CHEST.get()));
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

@@ -34,6 +34,8 @@ import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
 import net.neoforged.neoforge.transfer.ResourceHandler;
 import net.neoforged.neoforge.transfer.item.ItemResource;
 import net.neoforged.neoforge.transfer.item.ItemUtil;
+import net.neoforged.neoforge.transfer.item.VanillaContainerWrapper;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import org.jspecify.annotations.Nullable;
 
 /** Gany's End game events: inventory tagging, head drops, scythe charging, the endium chestplate and ender flower bone meal. */
@@ -43,6 +45,8 @@ public final class GanysEvents {
             e.register(MobHead.DATA_MAP);
             e.register(CakeFood.DATA_MAP);
         });
+        modBus.addListener((RegisterCapabilitiesEvent e) -> e.registerBlockEntity(Capabilities.Item.BLOCK,
+                GanysSurface.SOUL_CHEST_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be)));
         IEventBus bus = NeoForge.EVENT_BUS;
         bus.addListener(GanysEvents::tag);
         bus.addListener(EventPriority.LOWEST, GanysEvents::livingDrops);

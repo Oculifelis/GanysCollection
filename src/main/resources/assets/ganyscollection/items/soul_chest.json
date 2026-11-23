@@ -1,0 +1,10 @@
+{
+  "model": {
+    "type": "minecraft:special",
+    "base": "ganyscollection:item/soul_chest",
+    "model": {
+      "type": "minecraft:chest",
+      "texture": "ganyscollection:soul_chest"
+    }
+  }
+}
