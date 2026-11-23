@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " zx",
+    " yz",
+    "y  "
+  ],
+  "key": {
+    "x": "#c:gems/diamond",
+    "y": "minecraft:nether_brick",
+    "z": {
+      "neoforge:ingredient_type": "neoforge:components",
+      "items": "minecraft:enchanted_book",
+      "strict": false,
+      "components": {
+        "minecraft:stored_enchantments": {
+          "minecraft:knockback": 1
+        }
+      }
+    }
+  },
+  "result": {
+    "id": "ganyscollection:nether_club",
+    "count": 1
+  }
+}

@@ -46,6 +46,7 @@ public final class GanysEvents {
             e.register(MobHead.DATA_MAP);
             e.register(CakeFood.DATA_MAP);
             e.register(SoulTnt.DATA_MAP);
+            e.register(ClubKnockback.DATA_MAP);
         });
         modBus.addListener((RegisterCapabilitiesEvent e) -> {
             e.registerBlockEntity(Capabilities.Item.BLOCK, GanysSurface.SOUL_CHEST_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be));

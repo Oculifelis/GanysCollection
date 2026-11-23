@@ -7,6 +7,7 @@ import dev.oculifelis.ganys.block.AnchoredEnderChestBlockEntity;
 import dev.oculifelis.ganys.block.VoidCrateBlock;
 import dev.oculifelis.ganys.block.VoidCrateBlockEntity;
 import dev.oculifelis.ganys.item.EnderBagItem;
+import dev.oculifelis.ganys.item.NetherClubItem;
 import dev.oculifelis.ganys.block.GlowBoxBlock;
 import dev.oculifelis.ganys.block.WeepingPodBlock;
 import dev.oculifelis.ganys.block.SoulTntBlock;
@@ -284,6 +285,10 @@ public final class GanysSurface {
     public static final DeferredItem<BlockItem> VOID_CRATE_ITEM = ITEMS.registerSimpleBlockItem(VOID_CRATE);
     public static final Supplier<BlockEntityType<VoidCrateBlockEntity>> VOID_CRATE_ENTITY = BLOCK_ENTITIES.register("void_crate",
             () -> new BlockEntityType<>(VoidCrateBlockEntity::new, VOID_CRATE.get()));
+
+    /** Nether club: heavy knockback that weakens as it wears. */
+    public static final DeferredItem<NetherClubItem> NETHER_CLUB = ITEMS.registerItem("nether_club", NetherClubItem::new,
+            p -> p.durability(256).component(net.minecraft.core.component.DataComponents.WEAPON, new net.minecraft.world.item.component.Weapon(1)));
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);
