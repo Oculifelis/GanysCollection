@@ -1,6 +1,17 @@
 {
   "replace": false,
   "values": [
+    "ganyscollection:oak_leaf_wall",
+    "ganyscollection:spruce_leaf_wall",
+    "ganyscollection:birch_leaf_wall",
+    "ganyscollection:jungle_leaf_wall",
+    "ganyscollection:acacia_leaf_wall",
+    "ganyscollection:dark_oak_leaf_wall",
+    "ganyscollection:mangrove_leaf_wall",
+    "ganyscollection:cherry_leaf_wall",
+    "ganyscollection:pale_oak_leaf_wall",
+    "ganyscollection:azalea_leaf_wall",
+    "ganyscollection:flowering_azalea_leaf_wall",
     "ganyscollection:oak_disguised_trapdoor",
     "ganyscollection:spruce_disguised_trapdoor",
     "ganyscollection:birch_disguised_trapdoor",

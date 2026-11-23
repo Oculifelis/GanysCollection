@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "key": {
+    "x": "minecraft:flowering_azalea_leaves"
+  },
+  "result": {
+    "id": "ganyscollection:flowering_azalea_leaf_wall",
+    "count": 4
+  }
+}

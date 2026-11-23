@@ -1,0 +1,6 @@
+{
+  "parent": "ganyscollection:block/template_leaf_wall_side",
+  "textures": {
+    "wall": "minecraft:block/spruce_leaves"
+  }
+}

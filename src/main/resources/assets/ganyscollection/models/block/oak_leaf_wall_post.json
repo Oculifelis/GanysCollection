@@ -1,0 +1,6 @@
+{
+  "parent": "ganyscollection:block/template_leaf_wall_post",
+  "textures": {
+    "wall": "minecraft:block/oak_leaves"
+  }
+}

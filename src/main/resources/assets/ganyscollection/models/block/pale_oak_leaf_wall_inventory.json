@@ -1,0 +1,6 @@
+{
+  "parent": "ganyscollection:block/leaf_wall_inventory",
+  "textures": {
+    "wall": "minecraft:block/pale_oak_leaves"
+  }
+}

@@ -4,6 +4,7 @@ import dev.oculifelis.ganys.block.BlockDetectorBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlockEntity;
 import dev.oculifelis.ganys.block.CamelliaCropBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import java.util.LinkedHashMap;
@@ -159,6 +160,25 @@ public final class GanysSurface {
             DeferredBlock<TrapDoorBlock> b = BLOCKS.registerBlock(w[0] + "_disguised_trapdoor", p -> new TrapDoorBlock(type, p),
                     () -> Properties.ofFullCopy(kin));
             DISGUISED_TRAPDOORS.put((String) w[0], b);
+            ITEMS.registerSimpleBlockItem(b);
+        }
+    }
+
+    /** Gany's Surface leaf walls: one wall per vanilla leaf, keyed by that leaf (its tint is borrowed on the client). */
+    public static final Map<Block, DeferredBlock<WallBlock>> LEAF_WALLS = new LinkedHashMap<>();
+
+    static {
+        Object[][] leaves = {{"oak", Blocks.OAK_LEAVES}, {"spruce", Blocks.SPRUCE_LEAVES}, {"birch", Blocks.BIRCH_LEAVES},
+                {"jungle", Blocks.JUNGLE_LEAVES}, {"acacia", Blocks.ACACIA_LEAVES}, {"dark_oak", Blocks.DARK_OAK_LEAVES},
+                {"mangrove", Blocks.MANGROVE_LEAVES}, {"cherry", Blocks.CHERRY_LEAVES}, {"pale_oak", Blocks.PALE_OAK_LEAVES},
+                {"azalea", Blocks.AZALEA_LEAVES}, {"flowering_azalea", Blocks.FLOWERING_AZALEA_LEAVES}};
+        for (Object[] l : leaves) {
+            Block kin = (Block) l[1];
+            DeferredBlock<WallBlock> b = BLOCKS.registerBlock(l[0] + "_leaf_wall", WallBlock::new,
+                    p -> p.mapColor(kin.defaultMapColor()).strength(1.0F).sound(kin.defaultBlockState().getSoundType())
+                            .noOcclusion().isSuffocating((st, lv, ps) -> false).isViewBlocking((st, lv, ps) -> false)
+                            .ignitedByLava());
+            LEAF_WALLS.put(kin, b);
             ITEMS.registerSimpleBlockItem(b);
         }
     }
