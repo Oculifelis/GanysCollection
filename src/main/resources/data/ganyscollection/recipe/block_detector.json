@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyx",
+    "yzy",
+    "xyx"
+  ],
+  "key": {
+    "x": "#c:dusts/redstone",
+    "y": "minecraft:smooth_stone_slab",
+    "z": "minecraft:comparator"
+  },
+  "result": {
+    "id": "ganyscollection:block_detector",
+    "count": 1
+  }
+}

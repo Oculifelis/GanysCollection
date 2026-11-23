@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:dark_oak_planks",
+    "#minecraft:wooden_trapdoors"
+  ],
+  "result": {
+    "id": "ganyscollection:dark_oak_disguised_trapdoor",
+    "count": 1
+  }
+}

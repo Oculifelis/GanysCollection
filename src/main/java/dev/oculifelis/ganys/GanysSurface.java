@@ -1,6 +1,13 @@
 package dev.oculifelis.ganys;
 
+import dev.oculifelis.ganys.block.BlockDetectorBlock;
+import dev.oculifelis.ganys.block.BlockDetectorBlockEntity;
 import dev.oculifelis.ganys.block.CamelliaCropBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import java.util.LinkedHashMap;
+import java.util.function.Supplier;
 import dev.oculifelis.ganys.block.CushionBlock;
 import dev.oculifelis.ganys.block.InvertedLampBlock;
 import dev.oculifelis.ganys.block.SlowRailBlock;
@@ -125,6 +132,34 @@ public final class GanysSurface {
                     () -> Properties.of().mapColor(c.getMapColor()).strength(0.8F).sound(SoundType.SAND));
             DYE_BLOCKS.put(c, b);
             DYE_BLOCK_ITEMS.put(c, ITEMS.registerSimpleBlockItem(b));
+        }
+    }
+
+    // block detector: signals while a neighbour matches its filter item
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, GanysCollection.MOD_ID);
+    public static final DeferredBlock<BlockDetectorBlock> BLOCK_DETECTOR = BLOCKS.registerBlock("block_detector", BlockDetectorBlock::new,
+            () -> Properties.of().mapColor(MapColor.STONE).strength(2.0F).requiresCorrectToolForDrops());
+    public static final DeferredItem<BlockItem> BLOCK_DETECTOR_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_DETECTOR);
+    public static final Supplier<BlockEntityType<BlockDetectorBlockEntity>> BLOCK_DETECTOR_ENTITY = BLOCK_ENTITIES.register("block_detector",
+            () -> new BlockEntityType<>(BlockDetectorBlockEntity::new, BLOCK_DETECTOR.get()));
+
+    // disguised trapdoors: a wooden trapdoor that looks like the planks around it
+    public static final Map<String, DeferredBlock<TrapDoorBlock>> DISGUISED_TRAPDOORS = new LinkedHashMap<>();
+
+    static {
+        Object[][] woods = {{"oak", BlockSetType.OAK, Blocks.OAK_TRAPDOOR}, {"spruce", BlockSetType.SPRUCE, Blocks.SPRUCE_TRAPDOOR},
+                {"birch", BlockSetType.BIRCH, Blocks.BIRCH_TRAPDOOR}, {"jungle", BlockSetType.JUNGLE, Blocks.JUNGLE_TRAPDOOR},
+                {"acacia", BlockSetType.ACACIA, Blocks.ACACIA_TRAPDOOR}, {"dark_oak", BlockSetType.DARK_OAK, Blocks.DARK_OAK_TRAPDOOR},
+                {"mangrove", BlockSetType.MANGROVE, Blocks.MANGROVE_TRAPDOOR}, {"cherry", BlockSetType.CHERRY, Blocks.CHERRY_TRAPDOOR},
+                {"pale_oak", BlockSetType.PALE_OAK, Blocks.PALE_OAK_TRAPDOOR}, {"bamboo", BlockSetType.BAMBOO, Blocks.BAMBOO_TRAPDOOR},
+                {"crimson", BlockSetType.CRIMSON, Blocks.CRIMSON_TRAPDOOR}, {"warped", BlockSetType.WARPED, Blocks.WARPED_TRAPDOOR}};
+        for (Object[] w : woods) {
+            BlockSetType type = (BlockSetType) w[1];
+            Block kin = (Block) w[2];
+            DeferredBlock<TrapDoorBlock> b = BLOCKS.registerBlock(w[0] + "_disguised_trapdoor", p -> new TrapDoorBlock(type, p),
+                    () -> Properties.ofFullCopy(kin));
+            DISGUISED_TRAPDOORS.put((String) w[0], b);
+            ITEMS.registerSimpleBlockItem(b);
         }
     }
 

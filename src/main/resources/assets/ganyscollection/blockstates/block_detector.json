@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "ganyscollection:block/block_detector"
+    },
+    "powered=true": {
+      "model": "ganyscollection:block/block_detector_on"
+    }
+  }
+}

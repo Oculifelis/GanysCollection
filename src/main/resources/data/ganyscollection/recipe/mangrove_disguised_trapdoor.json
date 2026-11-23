@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:mangrove_planks",
+    "#minecraft:wooden_trapdoors"
+  ],
+  "result": {
+    "id": "ganyscollection:mangrove_disguised_trapdoor",
+    "count": 1
+  }
+}

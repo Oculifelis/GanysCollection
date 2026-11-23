@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:birch_planks",
+    "#minecraft:wooden_trapdoors"
+  ],
+  "result": {
+    "id": "ganyscollection:birch_disguised_trapdoor",
+    "count": 1
+  }
+}
