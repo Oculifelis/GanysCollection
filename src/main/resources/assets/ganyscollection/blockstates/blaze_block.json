@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "ganyscollection:block/blaze_block"
+    }
+  }
+}

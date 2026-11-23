@@ -1,0 +1,23 @@
+{
+  "values": {
+    "minecraft:zombie": {
+      "item": "minecraft:zombie_head"
+    },
+    "minecraft:skeleton": {
+      "item": "minecraft:skeleton_skull"
+    },
+    "minecraft:creeper": {
+      "item": "minecraft:creeper_head"
+    },
+    "minecraft:wither_skeleton": {
+      "item": "minecraft:wither_skeleton_skull",
+      "random": false
+    },
+    "minecraft:player": {
+      "item": "minecraft:player_head"
+    },
+    "minecraft:piglin": {
+      "item": "minecraft:piglin_head"
+    }
+  }
+}

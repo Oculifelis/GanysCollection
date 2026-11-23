@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "ganyscollection:item/reinforced_endium_bow_pulling_2"
+  }
+}

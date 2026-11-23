@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:endium_nugget"
+  },
+  "result": {
+    "id": "ganyscollection:endium_ingot",
+    "count": 1
+  }
+}

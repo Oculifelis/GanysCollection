@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "ganyscollection:blaze"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "ganyscollection:blaze"
+      }
+    ]
+  }
+}

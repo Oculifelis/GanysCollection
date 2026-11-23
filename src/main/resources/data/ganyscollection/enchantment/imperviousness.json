@@ -1,0 +1,21 @@
+{
+  "anvil_cost": 8,
+  "description": {
+    "translate": "enchantment.ganyscollection.imperviousness"
+  },
+  "effects": {},
+  "max_cost": {
+    "base": 40,
+    "per_level_above_first": 0
+  },
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 0
+  },
+  "max_level": 1,
+  "slots": [
+    "armor"
+  ],
+  "supported_items": "#ganyscollection:enchantable/imperviousness",
+  "weight": 5
+}

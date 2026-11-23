@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "key": {
+    "x": "ganyscollection:blaze_ingot"
+  },
+  "result": {
+    "id": "ganyscollection:blaze_leggings",
+    "count": 1
+  }
+}

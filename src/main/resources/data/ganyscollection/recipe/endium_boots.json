@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyx",
+    "x x"
+  ],
+  "key": {
+    "x": "ganyscollection:endium_ingot",
+    "y": "minecraft:green_dye"
+  },
+  "result": {
+    "id": "ganyscollection:endium_boots",
+    "count": 1
+  }
+}

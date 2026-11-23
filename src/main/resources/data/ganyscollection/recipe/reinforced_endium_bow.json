@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " x ",
+    "xyx"
+  ],
+  "key": {
+    "x": "minecraft:diamond",
+    "y": "ganyscollection:endium_bow"
+  },
+  "result": {
+    "id": "ganyscollection:reinforced_endium_bow",
+    "count": 1
+  }
+}
