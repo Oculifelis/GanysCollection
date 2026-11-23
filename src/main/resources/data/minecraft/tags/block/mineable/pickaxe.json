@@ -89,6 +89,8 @@
     "ganyscollection:blue_redstone_block",
     "ganyscollection:brown_redstone_block",
     "ganyscollection:green_redstone_block",
-    "ganyscollection:black_redstone_block"
+    "ganyscollection:black_redstone_block",
+    "ganyscollection:anchored_ender_chest",
+    "ganyscollection:void_crate"
   ]
 }

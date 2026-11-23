@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xzx"
+  ],
+  "key": {
+    "x": "#c:storage_blocks/gold",
+    "y": "minecraft:ender_chest",
+    "z": "minecraft:anvil"
+  },
+  "result": {
+    "id": "ganyscollection:anchored_ender_chest",
+    "count": 1
+  }
+}

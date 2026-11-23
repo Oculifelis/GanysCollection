@@ -30,6 +30,7 @@ public final class GanysClient {
 
     private static void renderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(GanysSurface.SOUL_CHEST_ENTITY.get(), SoulChestRenderer::new);
+        event.registerBlockEntityRenderer(GanysSurface.ANCHORED_ENDER_CHEST_ENTITY.get(), AnchoredEnderChestRenderer::new);
         event.registerEntityRenderer(GanysSurface.SOUL_TNT_ENTITY.get(), TntRenderer::new);
     }
 

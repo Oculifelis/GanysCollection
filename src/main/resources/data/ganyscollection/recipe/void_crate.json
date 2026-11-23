@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyx",
+    "xzx",
+    "xwx"
+  ],
+  "key": {
+    "x": "#minecraft:logs",
+    "y": "#c:chests/wooden",
+    "z": "minecraft:ender_pearl",
+    "w": "minecraft:obsidian"
+  },
+  "result": {
+    "id": "ganyscollection:void_crate",
+    "count": 1
+  }
+}

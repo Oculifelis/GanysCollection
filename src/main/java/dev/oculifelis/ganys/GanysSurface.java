@@ -2,6 +2,11 @@ package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.block.BlazingCactoidBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
+import dev.oculifelis.ganys.block.AnchoredEnderChestBlock;
+import dev.oculifelis.ganys.block.AnchoredEnderChestBlockEntity;
+import dev.oculifelis.ganys.block.VoidCrateBlock;
+import dev.oculifelis.ganys.block.VoidCrateBlockEntity;
+import dev.oculifelis.ganys.item.EnderBagItem;
 import dev.oculifelis.ganys.block.GlowBoxBlock;
 import dev.oculifelis.ganys.block.WeepingPodBlock;
 import dev.oculifelis.ganys.block.SoulTntBlock;
@@ -262,6 +267,23 @@ public final class GanysSurface {
             GLOW_BOX_ITEMS.put(c, ITEMS.registerSimpleBlockItem(b));
         }
     }
+
+    /** Ender bag: opens the holder's ender chest anywhere. */
+    public static final DeferredItem<EnderBagItem> ENDER_BAG = ITEMS.registerItem("ender_bag", EnderBagItem::new, p -> p.stacksTo(1));
+
+    /** Anchored ender chest: its placer's ender inventory, for anyone, while that player is online. */
+    public static final DeferredBlock<AnchoredEnderChestBlock> ANCHORED_ENDER_CHEST = BLOCKS.registerBlock("anchored_ender_chest",
+            AnchoredEnderChestBlock::new, () -> Properties.ofFullCopy(Blocks.ENDER_CHEST));
+    public static final DeferredItem<BlockItem> ANCHORED_ENDER_CHEST_ITEM = ITEMS.registerSimpleBlockItem(ANCHORED_ENDER_CHEST);
+    public static final Supplier<BlockEntityType<AnchoredEnderChestBlockEntity>> ANCHORED_ENDER_CHEST_ENTITY = BLOCK_ENTITIES.register(
+            "anchored_ender_chest", () -> new BlockEntityType<>(AnchoredEnderChestBlockEntity::new, ANCHORED_ENDER_CHEST.get()));
+
+    /** Void crate: storage that destroys overflow from hoppers and pipes. */
+    public static final DeferredBlock<VoidCrateBlock> VOID_CRATE = BLOCKS.registerBlock("void_crate", VoidCrateBlock::new,
+            () -> Properties.of().mapColor(MapColor.METAL).strength(2.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
+    public static final DeferredItem<BlockItem> VOID_CRATE_ITEM = ITEMS.registerSimpleBlockItem(VOID_CRATE);
+    public static final Supplier<BlockEntityType<VoidCrateBlockEntity>> VOID_CRATE_ENTITY = BLOCK_ENTITIES.register("void_crate",
+            () -> new BlockEntityType<>(VoidCrateBlockEntity::new, VOID_CRATE.get()));
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

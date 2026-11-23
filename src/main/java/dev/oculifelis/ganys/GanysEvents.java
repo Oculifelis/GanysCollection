@@ -47,8 +47,12 @@ public final class GanysEvents {
             e.register(CakeFood.DATA_MAP);
             e.register(SoulTnt.DATA_MAP);
         });
-        modBus.addListener((RegisterCapabilitiesEvent e) -> e.registerBlockEntity(Capabilities.Item.BLOCK,
-                GanysSurface.SOUL_CHEST_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be)));
+        modBus.addListener((RegisterCapabilitiesEvent e) -> {
+            e.registerBlockEntity(Capabilities.Item.BLOCK, GanysSurface.SOUL_CHEST_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be));
+            e.registerBlockEntity(Capabilities.Item.BLOCK, GanysSurface.VOID_CRATE_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be));
+            e.registerBlockEntity(Capabilities.Item.BLOCK, GanysSurface.ANCHORED_ENDER_CHEST_ENTITY.get(),
+                    (be, side) -> be.ender() != null ? VanillaContainerWrapper.of(be) : null);
+        });
         IEventBus bus = NeoForge.EVENT_BUS;
         bus.addListener(GanysEvents::tag);
         bus.addListener(GanysEvents::plantPod);

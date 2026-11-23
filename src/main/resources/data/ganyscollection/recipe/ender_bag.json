@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "zwz",
+    "wyw",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:ender_pearl",
+    "y": "ganyscollection:anchored_ender_chest",
+    "z": "minecraft:string",
+    "w": "minecraft:leather"
+  },
+  "result": {
+    "id": "ganyscollection:ender_bag",
+    "count": 1
+  }
+}
