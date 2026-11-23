@@ -47,7 +47,10 @@ public final class GanysEvents {
             e.register(CakeFood.DATA_MAP);
             e.register(SoulTnt.DATA_MAP);
             e.register(ClubKnockback.DATA_MAP);
+            e.register(BlazeGolemStats.DATA_MAP);
         });
+        modBus.addListener((net.neoforged.neoforge.event.entity.EntityAttributeCreationEvent e) ->
+                e.put(GanysSurface.BLAZE_GOLEM.get(), dev.oculifelis.ganys.entity.BlazeGolem.createAttributes().build()));
         modBus.addListener((RegisterCapabilitiesEvent e) -> {
             e.registerBlockEntity(Capabilities.Item.BLOCK, GanysSurface.SOUL_CHEST_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be));
             e.registerBlockEntity(Capabilities.Item.BLOCK, GanysSurface.VOID_CRATE_ENTITY.get(), (be, side) -> VanillaContainerWrapper.of(be));

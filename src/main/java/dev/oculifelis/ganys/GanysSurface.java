@@ -12,6 +12,7 @@ import dev.oculifelis.ganys.block.GlowBoxBlock;
 import dev.oculifelis.ganys.block.WeepingPodBlock;
 import dev.oculifelis.ganys.block.SoulTntBlock;
 import dev.oculifelis.ganys.entity.SoulPrimedTnt;
+import dev.oculifelis.ganys.entity.BlazeGolem;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import dev.oculifelis.ganys.block.SoulChestBlock;
@@ -289,6 +290,10 @@ public final class GanysSurface {
     /** Nether club: heavy knockback that weakens as it wears. */
     public static final DeferredItem<NetherClubItem> NETHER_CLUB = ITEMS.registerItem("nether_club", NetherClubItem::new,
             p -> p.durability(256).component(net.minecraft.core.component.DataComponents.WEAPON, new net.minecraft.world.item.component.Weapon(1)));
+
+    /** Blaze golem: two blaze blocks and a pumpkin; it guards against monsters with small fireballs. Stats in the blaze_golem data map. */
+    public static final Supplier<EntityType<BlazeGolem>> BLAZE_GOLEM = ENTITIES.registerEntityType("blaze_golem", BlazeGolem::new,
+            MobCategory.MISC, b -> b.sized(1.4F, 3.9F).eyeHeight(3.1F).fireImmune().clientTrackingRange(10));
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

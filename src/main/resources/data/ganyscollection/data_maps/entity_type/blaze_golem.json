@@ -1,0 +1,11 @@
+{
+  "values": {
+    "ganyscollection:blaze_golem": {
+      "health": 4.0,
+      "speed": 0.2,
+      "attack_interval": 30,
+      "attack_range": 10.0,
+      "shot_delay": 10
+    }
+  }
+}

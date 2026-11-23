@@ -79,7 +79,7 @@ public final class GanysBlocks {
             () -> pearl().forceSolidOn());
     public static final DeferredBlock<EnderFlowerBlock> ENDER_FLOWER = BLOCKS.registerBlock("ender_flower", EnderFlowerBlock::new,
             () -> Properties.ofFullCopy(Blocks.DANDELION).mapColor(MapColor.COLOR_PURPLE).lightLevel(s -> 4));
-    public static final DeferredBlock<Block> BLAZE_BLOCK = BLOCKS.registerBlock("blaze_block", Block::new,
+    public static final DeferredBlock<dev.oculifelis.ganys.block.BlazeBlock> BLAZE_BLOCK = BLOCKS.registerBlock("blaze_block", dev.oculifelis.ganys.block.BlazeBlock::new,
             () -> Properties.of().mapColor(MapColor.COLOR_ORANGE).strength(5.0F, 6.0F).sound(SoundType.METAL).requiresCorrectToolForDrops());
 
     private static Properties pearl() {

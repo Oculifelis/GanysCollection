@@ -32,6 +32,7 @@ public final class GanysClient {
         event.registerBlockEntityRenderer(GanysSurface.SOUL_CHEST_ENTITY.get(), SoulChestRenderer::new);
         event.registerBlockEntityRenderer(GanysSurface.ANCHORED_ENDER_CHEST_ENTITY.get(), AnchoredEnderChestRenderer::new);
         event.registerEntityRenderer(GanysSurface.SOUL_TNT_ENTITY.get(), TntRenderer::new);
+        event.registerEntityRenderer(GanysSurface.BLAZE_GOLEM.get(), BlazeGolemRenderer::new);
     }
 
     /** Leaf walls take the tint of the leaf they are made from; coloured dust takes its dye colour, dimmed by power. */
