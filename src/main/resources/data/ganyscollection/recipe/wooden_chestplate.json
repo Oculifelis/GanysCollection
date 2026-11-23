@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#minecraft:logs"
+  },
+  "result": {
+    "id": "ganyscollection:wooden_chestplate",
+    "count": 1
+  }
+}

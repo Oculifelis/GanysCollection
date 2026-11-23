@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "key": {
+    "x": "#minecraft:logs"
+  },
+  "result": {
+    "id": "ganyscollection:wooden_leggings",
+    "count": 1
+  }
+}

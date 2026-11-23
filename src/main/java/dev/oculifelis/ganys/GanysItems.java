@@ -103,6 +103,12 @@ public final class GanysItems {
     public static final DeferredItem<GanysArmorItem> BLAZE_LEGGINGS = armor("blaze_leggings", GanysArmorItem.Kind.BLAZE, ArmorType.LEGGINGS);
     public static final DeferredItem<GanysArmorItem> BLAZE_BOOTS = armor("blaze_boots", GanysArmorItem.Kind.BLAZE, ArmorType.BOOTS);
 
+    // Gany's Surface wooden armour
+    public static final DeferredItem<GanysArmorItem> WOODEN_HELMET = armor("wooden_helmet", GanysArmorItem.Kind.WOOD, ArmorType.HELMET);
+    public static final DeferredItem<GanysArmorItem> WOODEN_CHESTPLATE = armor("wooden_chestplate", GanysArmorItem.Kind.WOOD, ArmorType.CHESTPLATE);
+    public static final DeferredItem<GanysArmorItem> WOODEN_LEGGINGS = armor("wooden_leggings", GanysArmorItem.Kind.WOOD, ArmorType.LEGGINGS);
+    public static final DeferredItem<GanysArmorItem> WOODEN_BOOTS = armor("wooden_boots", GanysArmorItem.Kind.WOOD, ArmorType.BOOTS);
+
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("main", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.ganyscollection"))
             .icon(() -> new ItemStack(QUARTZ_BERRY.get()))
@@ -131,8 +137,16 @@ public final class GanysItems {
     }
 
     private static DeferredItem<GanysArmorItem> armor(String name, GanysArmorItem.Kind kind, ArmorType type) {
-        ArmorMaterial mat = kind == GanysArmorItem.Kind.ENDIUM ? GanysMaterials.ENDIUM_ARMOR : GanysMaterials.BLAZE_ARMOR;
-        Rarity rarity = kind == GanysArmorItem.Kind.ENDIUM ? Rarity.EPIC : Rarity.UNCOMMON;
+        ArmorMaterial mat = switch (kind) {
+            case ENDIUM -> GanysMaterials.ENDIUM_ARMOR;
+            case BLAZE -> GanysMaterials.BLAZE_ARMOR;
+            case WOOD -> GanysMaterials.WOOD_ARMOR;
+        };
+        Rarity rarity = switch (kind) {
+            case ENDIUM -> Rarity.EPIC;
+            case BLAZE -> Rarity.UNCOMMON;
+            case WOOD -> Rarity.COMMON;
+        };
         return ITEMS.registerItem(name, p -> new GanysArmorItem(kind, p), p -> p.humanoidArmor(mat, type).rarity(rarity));
     }
 

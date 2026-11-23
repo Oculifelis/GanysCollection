@@ -17,10 +17,10 @@ import org.jspecify.annotations.Nullable;
 /**
  * Endium and blaze armour, ticking while worn by a player. Endium wears out in rain and hurts its wearer in water;
  * each piece has its own perk. Blaze armour slowly mends itself and mends fast in fire, but water eats it.
- * Imperviousness turns off the water and rain harm.
+ * Imperviousness turns off the water and rain harm. Wooden armour wears out while its wearer burns.
  */
 public class GanysArmorItem extends Item {
-    public enum Kind { ENDIUM, BLAZE }
+    public enum Kind { ENDIUM, BLAZE, WOOD }
 
     private final Kind kind;
 
@@ -32,9 +32,14 @@ public class GanysArmorItem extends Item {
     @Override
     public void inventoryTick(ItemStack stack, ServerLevel level, Entity owner, @Nullable EquipmentSlot slot) {
         if (slot == null || slot.getType() != EquipmentSlot.Type.HUMANOID_ARMOR || !(owner instanceof Player player)) return;
-        boolean impervious = impervious(stack, level);
-        if (kind == Kind.ENDIUM) endium(stack, level, player, slot, impervious);
-        else blaze(stack, level, player, slot, impervious);
+        boolean impervious = kind != Kind.WOOD && impervious(stack, level);
+        switch (kind) {
+            case ENDIUM -> endium(stack, level, player, slot, impervious);
+            case BLAZE -> blaze(stack, level, player, slot, impervious);
+            case WOOD -> {
+                if (player.isOnFire()) stack.hurtAndBreak(1, player, slot);
+            }
+        }
     }
 
     public static boolean impervious(ItemStack stack, ServerLevel level) {

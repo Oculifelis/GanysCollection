@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "x x"
+  ],
+  "key": {
+    "x": "#minecraft:logs"
+  },
+  "result": {
+    "id": "ganyscollection:wooden_helmet",
+    "count": 1
+  }
+}

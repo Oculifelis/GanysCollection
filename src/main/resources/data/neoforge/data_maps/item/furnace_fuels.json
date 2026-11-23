@@ -2,6 +2,18 @@
   "values": {
     "ganyscollection:charcoal_block": {
       "burn_time": 16000
+    },
+    "ganyscollection:wooden_helmet": {
+      "burn_time": 300
+    },
+    "ganyscollection:wooden_chestplate": {
+      "burn_time": 300
+    },
+    "ganyscollection:wooden_leggings": {
+      "burn_time": 300
+    },
+    "ganyscollection:wooden_boots": {
+      "burn_time": 300
     }
   }
 }
