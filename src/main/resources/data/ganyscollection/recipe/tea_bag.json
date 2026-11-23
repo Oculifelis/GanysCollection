@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " y ",
+    "yxy",
+    " y "
+  ],
+  "key": {
+    "x": "ganyscollection:tea_leaves",
+    "y": "minecraft:string"
+  },
+  "result": {
+    "id": "ganyscollection:tea_bag",
+    "count": 1
+  }
+}

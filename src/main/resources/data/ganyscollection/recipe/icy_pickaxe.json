@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    " y ",
+    " y "
+  ],
+  "key": {
+    "x": "minecraft:ice",
+    "y": "#c:rods/wooden"
+  },
+  "result": {
+    "id": "ganyscollection:icy_pickaxe",
+    "count": 1
+  }
+}

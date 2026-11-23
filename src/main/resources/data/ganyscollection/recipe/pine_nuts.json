@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:pine_cone"
+  ],
+  "result": {
+    "id": "ganyscollection:pine_nuts",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:lime_dye_block"
+  ],
+  "result": {
+    "id": "minecraft:lime_dye",
+    "count": 9
+  }
+}

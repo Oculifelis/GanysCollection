@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:pink_dye_block"
+  ],
+  "result": {
+    "id": "minecraft:pink_dye",
+    "count": 9
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:orange_dye_block"
+  ],
+  "result": {
+    "id": "minecraft:orange_dye",
+    "count": 9
+  }
+}

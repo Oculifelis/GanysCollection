@@ -24,6 +24,8 @@ public class GanysCollection {
     public GanysCollection(IEventBus modBus) {
         GanysBlocks.BLOCKS.register(modBus);
         GanysItems.ITEMS.register(modBus);
+        GanysSurface.BLOCKS.register(modBus);
+        GanysSurface.ITEMS.register(modBus);
         GanysItems.TABS.register(modBus);
         GanysComponents.COMPONENTS.register(modBus);
         GanysEvents.register(modBus);

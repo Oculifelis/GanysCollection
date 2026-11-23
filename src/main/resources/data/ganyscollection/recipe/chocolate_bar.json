@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:cocoa_beans",
+    "y": "minecraft:milk_bucket"
+  },
+  "result": {
+    "id": "ganyscollection:chocolate_bar",
+    "count": 4
+  }
+}

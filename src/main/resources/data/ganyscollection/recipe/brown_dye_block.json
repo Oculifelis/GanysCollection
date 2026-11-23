@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:brown_dye"
+  },
+  "result": {
+    "id": "ganyscollection:brown_dye_block",
+    "count": 1
+  }
+}

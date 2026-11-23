@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x",
+    "y",
+    "z"
+  ],
+  "key": {
+    "x": "ganyscollection:wolf_teeth",
+    "y": "minecraft:stick",
+    "z": "minecraft:feather"
+  },
+  "result": {
+    "id": "minecraft:arrow",
+    "count": 16
+  }
+}

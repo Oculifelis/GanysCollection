@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:bat_poop",
+    "y": "minecraft:dirt"
+  },
+  "result": {
+    "id": "ganyscollection:fertiliser",
+    "count": 8
+  }
+}

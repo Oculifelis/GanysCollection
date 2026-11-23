@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:poop"
+  },
+  "result": {
+    "id": "ganyscollection:block_of_poop",
+    "count": 1
+  }
+}

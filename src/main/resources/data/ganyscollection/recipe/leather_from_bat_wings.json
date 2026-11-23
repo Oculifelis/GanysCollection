@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:bat_wing"
+  },
+  "result": {
+    "id": "minecraft:leather",
+    "count": 1
+  }
+}

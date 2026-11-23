@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyz",
+    "wab",
+    "cde"
+  ],
+  "key": {
+    "x": "minecraft:magma_cream",
+    "y": "minecraft:nether_wart",
+    "z": "minecraft:quartz",
+    "w": "minecraft:blaze_rod",
+    "a": "minecraft:glowstone_dust",
+    "b": "minecraft:soul_sand",
+    "c": "minecraft:nether_bricks",
+    "d": "minecraft:ghast_tear",
+    "e": "minecraft:wither_skeleton_skull"
+  },
+  "result": {
+    "id": "ganyscollection:nether_core",
+    "count": 1
+  }
+}

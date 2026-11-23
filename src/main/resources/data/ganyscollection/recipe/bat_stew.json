@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyz",
+    " w "
+  ],
+  "key": {
+    "x": "minecraft:brown_mushroom",
+    "y": "ganyscollection:bat_wing",
+    "z": "minecraft:red_mushroom",
+    "w": "minecraft:bowl"
+  },
+  "result": {
+    "id": "ganyscollection:bat_stew",
+    "count": 1
+  }
+}

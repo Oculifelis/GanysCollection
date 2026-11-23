@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:green_dye"
+  },
+  "result": {
+    "id": "ganyscollection:green_dye_block",
+    "count": 1
+  }
+}

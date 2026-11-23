@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "ingredient": "#c:eggs",
+  "result": {
+    "id": "ganyscollection:cooked_egg"
+  },
+  "experience": 0.5,
+  "cookingtime": 200
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:silverfish_scale",
+    "y": "minecraft:stone"
+  },
+  "result": {
+    "id": "minecraft:infested_stone",
+    "count": 1
+  }
+}

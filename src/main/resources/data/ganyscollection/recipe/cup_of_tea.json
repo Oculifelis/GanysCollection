@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " x ",
+    "yaz",
+    " b "
+  ],
+  "key": {
+    "x": "minecraft:milk_bucket",
+    "y": "minecraft:potion",
+    "z": "minecraft:sugar",
+    "a": "ganyscollection:tea_bag",
+    "b": "ganyscollection:mug"
+  },
+  "result": {
+    "id": "ganyscollection:cup_of_tea",
+    "count": 1
+  }
+}

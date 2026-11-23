@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "zxz",
+    "xyx",
+    "zxz"
+  ],
+  "key": {
+    "x": "#minecraft:wool",
+    "y": "minecraft:purple_dye",
+    "z": "minecraft:gold_nugget"
+  },
+  "result": {
+    "id": "ganyscollection:cushion",
+    "count": 1
+  }
+}

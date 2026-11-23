@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:block_of_poop"
+  ],
+  "result": {
+    "id": "ganyscollection:poop",
+    "count": 9
+  }
+}

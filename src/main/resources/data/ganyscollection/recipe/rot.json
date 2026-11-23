@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "minecraft:rotten_flesh",
+    "y": "minecraft:dirt"
+  },
+  "result": {
+    "id": "ganyscollection:rot",
+    "count": 4
+  }
+}

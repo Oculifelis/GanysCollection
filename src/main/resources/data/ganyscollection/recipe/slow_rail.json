@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "w w",
+    "xyx",
+    "wzw"
+  ],
+  "key": {
+    "x": "#c:slime_balls",
+    "y": "#c:rods/wooden",
+    "z": "#c:dusts/redstone",
+    "w": "#c:ingots/iron"
+  },
+  "result": {
+    "id": "ganyscollection:slow_rail",
+    "count": 6
+  }
+}

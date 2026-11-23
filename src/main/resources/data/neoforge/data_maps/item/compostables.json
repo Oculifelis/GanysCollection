@@ -1,0 +1,25 @@
+{
+  "values": {
+    "ganyscollection:tea_leaves": {
+      "chance": 0.3
+    },
+    "ganyscollection:camellia_seeds": {
+      "chance": 0.3
+    },
+    "ganyscollection:pine_cone": {
+      "chance": 0.3
+    },
+    "ganyscollection:rot": {
+      "chance": 0.65
+    },
+    "ganyscollection:poop": {
+      "chance": 0.65
+    },
+    "ganyscollection:bat_poop": {
+      "chance": 0.65
+    },
+    "ganyscollection:block_of_poop": {
+      "chance": 1.0
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "x x",
+    " x ",
+    " x "
+  ],
+  "key": {
+    "x": "#minecraft:planks"
+  },
+  "result": {
+    "id": "ganyscollection:wooden_wrench",
+    "count": 1
+  }
+}

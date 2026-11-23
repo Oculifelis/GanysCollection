@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=true": {
+      "model": "ganyscollection:block/inverted_redstone_lamp"
+    },
+    "lit=false": {
+      "model": "ganyscollection:block/inverted_redstone_lamp_off"
+    }
+  }
+}

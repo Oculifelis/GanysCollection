@@ -1,0 +1,141 @@
+package dev.oculifelis.ganys;
+
+import dev.oculifelis.ganys.block.CamelliaCropBlock;
+import dev.oculifelis.ganys.block.CushionBlock;
+import dev.oculifelis.ganys.block.InvertedLampBlock;
+import dev.oculifelis.ganys.block.SlowRailBlock;
+import dev.oculifelis.ganys.item.IcyPickaxeItem;
+import dev.oculifelis.ganys.item.WoodenWrenchItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.item.ToolMaterial;
+import java.util.EnumMap;
+import java.util.Map;
+import net.minecraft.world.item.BoneMealItem;
+import net.minecraft.core.HolderSet;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.component.Consumable;
+import net.minecraft.world.item.component.Consumables;
+import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
+import net.minecraft.world.item.consume_effects.RemoveStatusEffectsConsumeEffect;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.material.MapColor;
+import net.neoforged.neoforge.registries.DeferredBlock;
+import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+/** Phase 3: Gany's Surface food, the tea line, fertiliser and simple storage blocks, plus Gany's Nether mob drops. */
+public final class GanysSurface {
+    public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(GanysCollection.MOD_ID);
+    public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(GanysCollection.MOD_ID);
+
+    // blocks
+    public static final DeferredBlock<CamelliaCropBlock> CAMELLIA = BLOCKS.registerBlock("camellia",
+            CamelliaCropBlock::new, () -> Properties.ofFullCopy(Blocks.WHEAT).mapColor(MapColor.PLANT));
+    public static final DeferredBlock<Block> CHARCOAL_BLOCK = BLOCKS.registerBlock("charcoal_block", Block::new,
+            () -> Properties.ofFullCopy(Blocks.COAL_BLOCK).mapColor(MapColor.COLOR_GRAY));
+    public static final DeferredBlock<Block> BLOCK_OF_POOP = BLOCKS.registerBlock("block_of_poop", Block::new,
+            () -> Properties.of().mapColor(MapColor.DIRT).strength(0.5F).sound(SoundType.MUD));
+
+    // tea line
+    public static final DeferredItem<BlockItem> CAMELLIA_SEEDS = ITEMS.registerItem("camellia_seeds",
+            p -> new BlockItem(CAMELLIA.get(), p), p -> p.useItemDescriptionPrefix());
+    public static final DeferredItem<Item> TEA_LEAVES = ITEMS.registerSimpleItem("tea_leaves");
+    public static final DeferredItem<Item> TEA_BAG = ITEMS.registerSimpleItem("tea_bag");
+    public static final DeferredItem<Item> CLAY_MUG = ITEMS.registerSimpleItem("clay_mug");
+    public static final DeferredItem<Item> MUG = ITEMS.registerSimpleItem("mug");
+    /** Clears slowness, mining fatigue and weakness, then gives Speed IV for a minute. */
+    public static final DeferredItem<Item> CUP_OF_TEA = ITEMS.registerSimpleItem("cup_of_tea", p -> p.stacksTo(1)
+            .usingConvertsTo(MUG.get())
+            .food(new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build(), tea()
+                    .onConsume(new RemoveStatusEffectsConsumeEffect(HolderSet.direct(MobEffects.SLOWNESS, MobEffects.MINING_FATIGUE, MobEffects.WEAKNESS)))
+                    .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 1200, 3))).build()));
+    /** Tea made the wrong way round: clears speed, haste and jump boost and hands out the bad ones. */
+    public static final DeferredItem<Item> MANKY_CUP_OF_TEA = ITEMS.registerSimpleItem("manky_cup_of_tea", p -> p.stacksTo(1)
+            .usingConvertsTo(MUG.get())
+            .food(new FoodProperties.Builder().nutrition(0).saturationModifier(0).alwaysEdible().build(), tea()
+                    .onConsume(new RemoveStatusEffectsConsumeEffect(HolderSet.direct(MobEffects.SPEED, MobEffects.HASTE, MobEffects.JUMP_BOOST)))
+                    .onConsume(new ApplyStatusEffectsConsumeEffect(java.util.List.of(
+                            new MobEffectInstance(MobEffects.SLOWNESS, 1200, 3), new MobEffectInstance(MobEffects.MINING_FATIGUE, 1200),
+                            new MobEffectInstance(MobEffects.WEAKNESS, 1200, 3), new MobEffectInstance(MobEffects.HUNGER, 900)))).build()));
+
+    // food (nutrition and saturation from the original)
+    public static final DeferredItem<Item> PINE_CONE = ITEMS.registerSimpleItem("pine_cone");
+    public static final DeferredItem<Item> PINE_NUTS = food("pine_nuts", 4, 0.3F);
+    public static final DeferredItem<Item> CHOCOLATE_BAR = food("chocolate_bar", 3, 1.2F);
+    public static final DeferredItem<Item> COOKED_EGG = ITEMS.registerSimpleItem("cooked_egg", p -> p.stacksTo(16)
+            .food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F).build()));
+    public static final DeferredItem<Item> ROASTED_SQUID = food("roasted_squid", 6, 0.5F);
+    public static final DeferredItem<Item> BAT_STEW = ITEMS.registerSimpleItem("bat_stew", p -> p.stacksTo(1)
+            .usingConvertsTo(Items.BOWL).food(new FoodProperties.Builder().nutrition(8).saturationModifier(0.6F).build()));
+
+    // fertiliser line: rot and fertiliser work as bone meal, as in the original
+    public static final DeferredItem<BoneMealItem> ROT = ITEMS.registerItem("rot", BoneMealItem::new);
+    public static final DeferredItem<BoneMealItem> FERTILISER = ITEMS.registerItem("fertiliser", BoneMealItem::new);
+    public static final DeferredItem<Item> POOP = ITEMS.registerSimpleItem("poop");
+    public static final DeferredItem<Item> BAT_POOP = ITEMS.registerSimpleItem("bat_poop");
+    public static final DeferredItem<BlockItem> BLOCK_OF_POOP_ITEM = ITEMS.registerSimpleBlockItem(BLOCK_OF_POOP);
+    public static final DeferredItem<BlockItem> CHARCOAL_BLOCK_ITEM = ITEMS.registerSimpleBlockItem(CHARCOAL_BLOCK);
+
+    // Gany's Nether mob drops and materials
+    public static final DeferredItem<Item> BAT_WING = ITEMS.registerSimpleItem("bat_wing");
+    public static final DeferredItem<Item> COOKED_BAT_WING = food("cooked_bat_wing", 1, 0.6F);
+    public static final DeferredItem<Item> WOLF_TEETH = ITEMS.registerSimpleItem("wolf_teeth");
+    public static final DeferredItem<Item> SILVERFISH_SCALE = ITEMS.registerSimpleItem("silverfish_scale");
+    public static final DeferredItem<Item> LIVING_SOUL = ITEMS.registerSimpleItem("living_soul");
+    public static final DeferredItem<Item> NETHER_CORE = ITEMS.registerSimpleItem("nether_core");
+
+    // redstone, rails and tools
+    public static final DeferredBlock<InvertedLampBlock> INVERTED_REDSTONE_LAMP = BLOCKS.registerBlock("inverted_redstone_lamp",
+            InvertedLampBlock::new, () -> Properties.ofFullCopy(Blocks.REDSTONE_LAMP)
+                    .lightLevel(s -> s.getValue(InvertedLampBlock.LIT) ? 15 : 0));
+    public static final DeferredBlock<CushionBlock> CUSHION = BLOCKS.registerBlock("cushion", CushionBlock::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_PURPLE).strength(0.2F).sound(SoundType.WOOL));
+    public static final DeferredBlock<SlowRailBlock> SLOW_RAIL = BLOCKS.registerBlock("slow_rail", SlowRailBlock::new,
+            () -> Properties.ofFullCopy(Blocks.POWERED_RAIL));
+    public static final DeferredItem<BlockItem> INVERTED_REDSTONE_LAMP_ITEM = ITEMS.registerSimpleBlockItem(INVERTED_REDSTONE_LAMP);
+    public static final DeferredItem<BlockItem> CUSHION_ITEM = ITEMS.registerSimpleBlockItem(CUSHION);
+    public static final DeferredItem<BlockItem> SLOW_RAIL_ITEM = ITEMS.registerSimpleBlockItem(SLOW_RAIL);
+
+    /** Iron-tier ice: 512 uses, speed 6, enchantability 14, mended with ice (values from the original). */
+    public static final TagKey<Item> ICE_TOOL_MATERIALS = TagKey.create(Registries.ITEM, GanysCollection.id("ice_tool_materials"));
+    public static final ToolMaterial ICE = new ToolMaterial(BlockTags.INCORRECT_FOR_IRON_TOOL, 512, 6.0F, 2.0F, 14, ICE_TOOL_MATERIALS);
+    public static final DeferredItem<IcyPickaxeItem> ICY_PICKAXE = ITEMS.registerItem("icy_pickaxe", IcyPickaxeItem::new,
+            p -> p.pickaxe(ICE, 1.0F, -2.8F));
+    public static final DeferredItem<WoodenWrenchItem> WOODEN_WRENCH = ITEMS.registerItem("wooden_wrench", WoodenWrenchItem::new,
+            p -> p.stacksTo(1));
+
+    // dye blocks: one solid block per dye colour, nine dyes each
+    public static final Map<DyeColor, DeferredBlock<Block>> DYE_BLOCKS = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredItem<BlockItem>> DYE_BLOCK_ITEMS = new EnumMap<>(DyeColor.class);
+
+    static {
+        for (DyeColor c : DyeColor.values()) {
+            DeferredBlock<Block> b = BLOCKS.registerBlock(c.getName() + "_dye_block", Block::new,
+                    () -> Properties.of().mapColor(c.getMapColor()).strength(0.8F).sound(SoundType.SAND));
+            DYE_BLOCKS.put(c, b);
+            DYE_BLOCK_ITEMS.put(c, ITEMS.registerSimpleBlockItem(b));
+        }
+    }
+
+    private static Consumable.Builder tea() {
+        return Consumables.defaultDrink().consumeSeconds(1.75F);
+    }
+
+    private static DeferredItem<Item> food(String name, int nutrition, float saturation) {
+        return ITEMS.registerSimpleItem(name, p -> p.food(new FoodProperties.Builder().nutrition(nutrition).saturationModifier(saturation).build()));
+    }
+
+    private GanysSurface() {
+    }
+}

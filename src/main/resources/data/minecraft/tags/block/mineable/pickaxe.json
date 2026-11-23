@@ -71,6 +71,8 @@
     "ganyscollection:ender_pearl_block",
     "ganyscollection:ender_pearl_stairs",
     "ganyscollection:ender_pearl_wall",
-    "ganyscollection:blaze_block"
+    "ganyscollection:blaze_block",
+    "ganyscollection:charcoal_block",
+    "ganyscollection:inverted_redstone_lamp"
   ]
 }

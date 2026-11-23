@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " x ",
+    "xyx",
+    " x "
+  ],
+  "key": {
+    "x": "minecraft:redstone_torch",
+    "y": "minecraft:glowstone"
+  },
+  "result": {
+    "id": "ganyscollection:inverted_redstone_lamp",
+    "count": 1
+  }
+}

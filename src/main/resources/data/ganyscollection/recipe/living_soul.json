@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "zxz",
+    "xyx",
+    "zyz"
+  ],
+  "key": {
+    "x": "minecraft:rotten_flesh",
+    "y": "minecraft:bone",
+    "z": "minecraft:soul_sand"
+  },
+  "result": {
+    "id": "ganyscollection:living_soul",
+    "count": 2
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "ganyscollection:block_of_poop",
+    "ganyscollection:white_dye_block",
+    "ganyscollection:orange_dye_block",
+    "ganyscollection:magenta_dye_block",
+    "ganyscollection:light_blue_dye_block",
+    "ganyscollection:yellow_dye_block",
+    "ganyscollection:lime_dye_block",
+    "ganyscollection:pink_dye_block",
+    "ganyscollection:gray_dye_block",
+    "ganyscollection:light_gray_dye_block",
+    "ganyscollection:cyan_dye_block",
+    "ganyscollection:purple_dye_block",
+    "ganyscollection:blue_dye_block",
+    "ganyscollection:brown_dye_block",
+    "ganyscollection:green_dye_block",
+    "ganyscollection:red_dye_block",
+    "ganyscollection:black_dye_block"
+  ]
+}

@@ -106,7 +106,10 @@ public final class GanysItems {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> TAB = TABS.register("main", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.ganyscollection"))
             .icon(() -> new ItemStack(QUARTZ_BERRY.get()))
-            .displayItems((params, output) -> ITEMS.getEntries().forEach(e -> output.accept(e.get())))
+            .displayItems((params, output) -> {
+                ITEMS.getEntries().forEach(e -> output.accept(e.get()));
+                GanysSurface.ITEMS.getEntries().forEach(e -> output.accept(e.get()));
+            })
             .build());
 
     /** The seed each nether crop drops and is picked with. */
