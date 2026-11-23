@@ -27,8 +27,8 @@ public class WitherShrubBlock extends NetherCropBlock {
     private static final VoxelShape[] SHAPES = new VoxelShape[8];
 
     static {
-        for (int a = 0; a < 7; a++) SHAPES[a] = Block.column(4, 0, a * 2 + 2);
-        SHAPES[7] = Block.column(16, 0, 10);
+        for (int a = 0; a < 7; a++) SHAPES[a] = BerryBushBlock.column(4, 0, a * 2 + 2);
+        SHAPES[7] = BerryBushBlock.column(16, 0, 10);
     }
 
     public WitherShrubBlock(Properties properties) {

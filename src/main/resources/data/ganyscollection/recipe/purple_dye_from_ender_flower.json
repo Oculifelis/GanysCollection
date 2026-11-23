@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "ganyscollection:ender_flower"
+    {
+      "item": "ganyscollection:ender_flower"
+    }
   ],
   "result": {
     "id": "minecraft:purple_dye",

@@ -7,7 +7,9 @@
     "x x"
   ],
   "key": {
-    "x": "ganyscollection:ender_flower"
+    "x": {
+      "item": "ganyscollection:ender_flower"
+    }
   },
   "result": {
     "id": "minecraft:ender_pearl",

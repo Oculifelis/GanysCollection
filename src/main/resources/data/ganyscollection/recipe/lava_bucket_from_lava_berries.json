@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:lava_berry",
-    "y": "minecraft:bucket"
+    "x": {
+      "item": "ganyscollection:lava_berry"
+    },
+    "y": {
+      "item": "minecraft:bucket"
+    }
   },
   "result": {
     "id": "minecraft:lava_bucket",

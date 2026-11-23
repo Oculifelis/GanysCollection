@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:spooky_flour",
-    "y": "minecraft:sand"
+    "x": {
+      "item": "ganyscollection:spooky_flour"
+    },
+    "y": {
+      "item": "minecraft:sand"
+    }
   },
   "result": {
     "id": "minecraft:soul_sand",

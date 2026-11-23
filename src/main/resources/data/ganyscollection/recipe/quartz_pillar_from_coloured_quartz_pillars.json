@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "#ganyscollection:coloured_quartz_pillars"
+    {
+      "tag": "ganyscollection:coloured_quartz_pillars"
+    }
   ],
   "result": {
     "id": "minecraft:quartz_pillar",

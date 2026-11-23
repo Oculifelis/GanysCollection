@@ -7,7 +7,9 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:green_quartz_block"
+    "x": {
+      "item": "ganyscollection:green_quartz_block"
+    }
   },
   "result": {
     "id": "ganyscollection:green_quartz_stairs",

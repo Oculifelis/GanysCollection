@@ -14,7 +14,12 @@ public class BerryBushBlock extends NetherCropBlock {
     private static final VoxelShape[] SHAPES = new VoxelShape[8];
 
     static {
-        for (int a = 0; a < 8; a++) SHAPES[a] = Block.column(2 * (a + 1), 0, 2 * (a + 1));
+        for (int a = 0; a < 8; a++) SHAPES[a] = column(2 * (a + 1), 0, 2 * (a + 1));
+    }
+
+    /** A box w wide, centred on the block, from y0 to y1. */
+    static VoxelShape column(double w, double y0, double y1) {
+        return Block.box(8 - w / 2, y0, 8 - w / 2, 8 + w / 2, y1, 8 + w / 2);
     }
 
     public BerryBushBlock(Properties properties) {

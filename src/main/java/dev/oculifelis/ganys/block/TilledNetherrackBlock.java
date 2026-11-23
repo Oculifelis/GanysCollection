@@ -11,7 +11,6 @@ import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,13 +20,13 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.util.TriState;
+import net.neoforged.neoforge.common.util.TriState;
 
 /** Netherrack worked with a hoe. Lava nearby or rain keeps it moist, and it can't be trampled. */
 public class TilledNetherrackBlock extends Block {
     public static final MapCodec<TilledNetherrackBlock> CODEC = simpleCodec(TilledNetherrackBlock::new);
     public static final IntegerProperty MOISTURE = BlockStateProperties.MOISTURE;
-    private static final VoxelShape SHAPE = Block.column(16.0, 0.0, 15.0);
+    private static final VoxelShape SHAPE = Block.box(0.0, 0.0, 0.0, 16.0, 15.0, 16.0);
 
     public TilledNetherrackBlock(Properties properties) {
         super(properties);
@@ -66,10 +65,10 @@ public class TilledNetherrackBlock extends Block {
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks, BlockPos pos,
-                                     Direction direction, BlockPos neighbourPos, BlockState neighbourState, RandomSource random) {
-        if (direction == Direction.UP && !state.canSurvive(level, pos)) ticks.scheduleTick(pos, this, 1);
-        return super.updateShape(state, level, ticks, pos, direction, neighbourPos, neighbourState, random);
+    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbourState, LevelAccessor level,
+                                     BlockPos pos, BlockPos neighbourPos) {
+        if (direction == Direction.UP && !state.canSurvive(level, pos)) level.scheduleTick(pos, this, 1);
+        return super.updateShape(state, direction, neighbourState, level, pos, neighbourPos);
     }
 
     @Override

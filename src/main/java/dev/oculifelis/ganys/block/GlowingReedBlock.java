@@ -9,7 +9,7 @@ import net.minecraft.tags.FluidTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
-import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -18,7 +18,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 /** Nether sugar cane: grows three tall on netherrack or soul sand beside lava, and glows. */
 public class GlowingReedBlock extends Block {
     public static final MapCodec<GlowingReedBlock> CODEC = simpleCodec(GlowingReedBlock::new);
-    private static final VoxelShape SHAPE = Block.column(12.0, 0.0, 16.0);
+    private static final VoxelShape SHAPE = BerryBushBlock.column(12.0, 0.0, 16.0);
 
     public GlowingReedBlock(Properties properties) {
         super(properties);
@@ -48,10 +48,10 @@ public class GlowingReedBlock extends Block {
     }
 
     @Override
-    protected BlockState updateShape(BlockState state, LevelReader level, ScheduledTickAccess ticks, BlockPos pos,
-                                     Direction direction, BlockPos neighbourPos, BlockState neighbourState, RandomSource random) {
-        if (!state.canSurvive(level, pos)) ticks.scheduleTick(pos, this, 1);
-        return super.updateShape(state, level, ticks, pos, direction, neighbourPos, neighbourState, random);
+    protected BlockState updateShape(BlockState state, Direction direction, BlockState neighbourState, LevelAccessor level,
+                                     BlockPos pos, BlockPos neighbourPos) {
+        if (!state.canSurvive(level, pos)) level.scheduleTick(pos, this, 1);
+        return super.updateShape(state, direction, neighbourState, level, pos, neighbourPos);
     }
 
     @Override

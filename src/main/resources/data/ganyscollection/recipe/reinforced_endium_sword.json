@@ -6,8 +6,12 @@
     "xyx"
   ],
   "key": {
-    "x": "minecraft:diamond",
-    "y": "ganyscollection:endium_sword"
+    "x": {
+      "item": "minecraft:diamond"
+    },
+    "y": {
+      "item": "ganyscollection:endium_sword"
+    }
   },
   "result": {
     "id": "ganyscollection:reinforced_endium_sword",

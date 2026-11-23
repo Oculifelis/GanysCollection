@@ -1,18 +1,18 @@
 package dev.oculifelis.ganys.item;
 
 import dev.oculifelis.ganys.GanysComponents;
-import java.util.function.Consumer;
+import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.SwordItem;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.component.TooltipDisplay;
 
 /** Ender scythe: lightning charges it, and each charged kill drops the victim's head. */
-public class EnderScytheItem extends Item {
-    public EnderScytheItem(Properties properties) {
-        super(properties);
+public class EnderScytheItem extends SwordItem {
+    public EnderScytheItem(Tier tier, Properties properties) {
+        super(tier, properties);
     }
 
     public static int charges(ItemStack stack) {
@@ -33,7 +33,17 @@ public class EnderScytheItem extends Item {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> tooltip, TooltipFlag flag) {
-        tooltip.accept(Component.translatable("tooltip.ganyscollection.charges", charges(stack)).withStyle(ChatFormatting.GRAY));
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag flag) {
+        tooltip.add(Component.translatable("tooltip.ganyscollection.charges", charges(stack)).withStyle(ChatFormatting.GRAY));
+    }
+
+    @Override
+    public boolean isEnchantable(ItemStack stack) {
+        return false;
+    }
+
+    @Override
+    public boolean isBookEnchantable(ItemStack stack, ItemStack book) {
+        return false;
     }
 }

@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "minecraft:wheat"
+    {
+      "item": "minecraft:wheat"
+    }
   ],
   "result": {
     "id": "ganyscollection:flour",

@@ -7,7 +7,9 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:light_gray_quartz_block"
+    "x": {
+      "item": "ganyscollection:light_gray_quartz_block"
+    }
   },
   "result": {
     "id": "ganyscollection:light_gray_quartz_stairs",

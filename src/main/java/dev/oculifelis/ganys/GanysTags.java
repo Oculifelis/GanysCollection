@@ -1,7 +1,6 @@
 package dev.oculifelis.ganys;
 
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.Identifier;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -14,7 +13,7 @@ public final class GanysTags {
     public static final TagKey<Item> INVENTORY_TAGGERS = TagKey.create(Registries.ITEM, GanysCollection.id("inventory_taggers"));
 
     private static TagKey<Block> block(String name) {
-        return TagKey.create(Registries.BLOCK, Identifier.fromNamespaceAndPath(GanysCollection.MOD_ID, name));
+        return TagKey.create(Registries.BLOCK, GanysCollection.id(name));
     }
 
     private GanysTags() {

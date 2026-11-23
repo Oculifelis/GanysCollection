@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "ganyscollection:glowing_reed"
+    {
+      "item": "ganyscollection:glowing_reed"
+    }
   ],
   "result": {
     "id": "minecraft:glowstone_dust",

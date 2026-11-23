@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "#ganyscollection:dyeable_quartz_blocks",
-    "y": "minecraft:magenta_dye"
+    "x": {
+      "tag": "ganyscollection:dyeable_quartz_blocks"
+    },
+    "y": {
+      "item": "minecraft:magenta_dye"
+    }
   },
   "result": {
     "id": "ganyscollection:magenta_quartz_block",

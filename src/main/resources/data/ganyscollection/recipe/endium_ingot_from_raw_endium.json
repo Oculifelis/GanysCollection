@@ -1,7 +1,9 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "ingredient": "ganyscollection:raw_endium",
+  "ingredient": {
+    "item": "ganyscollection:raw_endium"
+  },
   "result": {
     "id": "ganyscollection:endium_ingot"
   },

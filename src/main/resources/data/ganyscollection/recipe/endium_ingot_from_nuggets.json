@@ -7,7 +7,9 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:endium_nugget"
+    "x": {
+      "item": "ganyscollection:endium_nugget"
+    }
   },
   "result": {
     "id": "ganyscollection:endium_ingot",

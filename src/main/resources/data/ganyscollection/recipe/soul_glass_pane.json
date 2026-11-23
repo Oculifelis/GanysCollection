@@ -6,7 +6,9 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:soul_glass"
+    "x": {
+      "item": "ganyscollection:soul_glass"
+    }
   },
   "result": {
     "id": "ganyscollection:soul_glass_pane",

@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:endium_ingot",
-    "y": "minecraft:green_dye"
+    "x": {
+      "item": "ganyscollection:endium_ingot"
+    },
+    "y": {
+      "item": "minecraft:green_dye"
+    }
   },
   "result": {
     "id": "ganyscollection:endium_chestplate",

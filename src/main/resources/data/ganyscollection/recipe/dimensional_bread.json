@@ -1,7 +1,9 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "ingredient": "ganyscollection:spooky_flour",
+  "ingredient": {
+    "item": "ganyscollection:spooky_flour"
+  },
   "result": {
     "id": "ganyscollection:dimensional_bread"
   },

@@ -11,7 +11,7 @@ base {
     archivesName = mod_id
 }
 
-java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 repositories {
     mavenCentral()
@@ -22,7 +22,9 @@ repositories {
 }
 
 dependencies {
-    implementation "com.fundamentum:fundamentum-neoforge:${fundamentum_version}"
+    // Fundamentum 1.21.1 is not in the local maven; the jar sits in _handoff/pending-install. Nothing is compiled against it.
+    runtimeOnly files("H:/AI_MC_Modding/_handoff/pending-install/fundamentum-neoforge-${fundamentum_version}.jar")
+    runtimeOnly "top.theillusivec4.curios:curios-neoforge:9.6.0+1.21.1"
 }
 
 neoForge {

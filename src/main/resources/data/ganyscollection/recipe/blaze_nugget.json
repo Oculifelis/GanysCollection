@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "ganyscollection:blaze_ingot"
+    {
+      "item": "ganyscollection:blaze_ingot"
+    }
   ],
   "result": {
     "id": "ganyscollection:blaze_nugget",

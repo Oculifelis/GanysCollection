@@ -6,7 +6,9 @@
     "x"
   ],
   "key": {
-    "x": "minecraft:end_stone"
+    "x": {
+      "item": "minecraft:end_stone"
+    }
   },
   "result": {
     "id": "ganyscollection:endstone_rod",

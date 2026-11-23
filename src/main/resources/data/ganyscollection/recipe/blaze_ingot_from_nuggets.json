@@ -7,7 +7,9 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:blaze_nugget"
+    "x": {
+      "item": "ganyscollection:blaze_nugget"
+    }
   },
   "result": {
     "id": "ganyscollection:blaze_ingot",

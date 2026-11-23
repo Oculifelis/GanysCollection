@@ -1,7 +1,9 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "ingredient": "ganyscollection:raw_blaze_ingot",
+  "ingredient": {
+    "item": "ganyscollection:raw_blaze_ingot"
+  },
   "result": {
     "id": "ganyscollection:blaze_ingot"
   },

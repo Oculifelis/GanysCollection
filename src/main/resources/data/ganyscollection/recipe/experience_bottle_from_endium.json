@@ -7,8 +7,12 @@
     "yyy"
   ],
   "key": {
-    "x": "ganyscollection:endium_ingot",
-    "y": "minecraft:glass_bottle"
+    "x": {
+      "item": "ganyscollection:endium_ingot"
+    },
+    "y": {
+      "item": "minecraft:glass_bottle"
+    }
   },
   "result": {
     "id": "minecraft:experience_bottle",

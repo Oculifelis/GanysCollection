@@ -7,7 +7,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
 import net.neoforged.neoforge.registries.datamaps.DataMapType;
-import org.jspecify.annotations.Nullable;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * The head an entity type drops, entity type data map {@code ganyscollection:mob_heads}. {@code random} false keeps a

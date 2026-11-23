@@ -2,7 +2,7 @@ package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.client.GanysClient;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.api.distmarker.Dist;
@@ -17,18 +17,19 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 public class GanysCollection {
     public static final String MOD_ID = "ganyscollection";
 
-    public static Identifier id(String path) {
-        return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    public static ResourceLocation id(String path) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
     }
 
     public GanysCollection(IEventBus modBus) {
         GanysBlocks.BLOCKS.register(modBus);
+        GanysMaterials.ARMOR_MATERIALS.register(modBus);
         GanysItems.ITEMS.register(modBus);
         GanysItems.TABS.register(modBus);
         GanysComponents.COMPONENTS.register(modBus);
         GanysEvents.register(modBus);
         NeoForge.EVENT_BUS.addListener(GanysCollection::till);
-        if (FMLEnvironment.getDist() == Dist.CLIENT) GanysClient.init(modBus);
+        if (FMLEnvironment.dist == Dist.CLIENT) GanysClient.init(modBus);
     }
 
     /** A hoe turns netherrack with air above it into tilled netherrack, unless another mod already claimed it. */

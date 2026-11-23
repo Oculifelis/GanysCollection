@@ -1,7 +1,9 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "ingredient": "ganyscollection:flour",
+  "ingredient": {
+    "item": "ganyscollection:flour"
+  },
   "result": {
     "id": "minecraft:bread"
   },

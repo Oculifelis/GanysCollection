@@ -7,7 +7,9 @@
     "x"
   ],
   "key": {
-    "x": "minecraft:blaze_rod"
+    "x": {
+      "item": "minecraft:blaze_rod"
+    }
   },
   "result": {
     "id": "ganyscollection:raw_blaze_ingot",

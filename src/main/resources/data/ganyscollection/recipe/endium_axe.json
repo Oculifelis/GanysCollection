@@ -7,8 +7,12 @@
     " y"
   ],
   "key": {
-    "x": "ganyscollection:endium_ingot",
-    "y": "ganyscollection:endstone_rod"
+    "x": {
+      "item": "ganyscollection:endium_ingot"
+    },
+    "y": {
+      "item": "ganyscollection:endstone_rod"
+    }
   },
   "result": {
     "id": "ganyscollection:endium_axe",

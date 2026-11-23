@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "#ganyscollection:coloured_chiseled_quartz_blocks"
+    {
+      "tag": "ganyscollection:coloured_chiseled_quartz_blocks"
+    }
   ],
   "result": {
     "id": "minecraft:chiseled_quartz_block",

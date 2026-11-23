@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "#ganyscollection:dyeable_quartz_pillars",
-    "y": "minecraft:cyan_dye"
+    "x": {
+      "tag": "ganyscollection:dyeable_quartz_pillars"
+    },
+    "y": {
+      "item": "minecraft:cyan_dye"
+    }
   },
   "result": {
     "id": "ganyscollection:cyan_quartz_pillar",

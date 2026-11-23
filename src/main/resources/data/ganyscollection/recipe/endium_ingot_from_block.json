@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "ganyscollection:endium_block"
+    {
+      "item": "ganyscollection:endium_block"
+    }
   ],
   "result": {
     "id": "ganyscollection:endium_ingot",

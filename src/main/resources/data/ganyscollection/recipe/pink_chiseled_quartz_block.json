@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "#ganyscollection:dyeable_chiseled_quartz_blocks",
-    "y": "minecraft:pink_dye"
+    "x": {
+      "tag": "ganyscollection:dyeable_chiseled_quartz_blocks"
+    },
+    "y": {
+      "item": "minecraft:pink_dye"
+    }
   },
   "result": {
     "id": "ganyscollection:pink_chiseled_quartz_block",

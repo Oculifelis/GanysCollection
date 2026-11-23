@@ -2,7 +2,9 @@
   "type": "minecraft:crafting_shapeless",
   "category": "misc",
   "ingredients": [
-    "ganyscollection:spectre_wheat"
+    {
+      "item": "ganyscollection:spectre_wheat"
+    }
   ],
   "result": {
     "id": "ganyscollection:spooky_flour",

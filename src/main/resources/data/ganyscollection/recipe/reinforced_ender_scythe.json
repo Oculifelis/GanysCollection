@@ -6,8 +6,12 @@
     "xyx"
   ],
   "key": {
-    "x": "minecraft:diamond",
-    "y": "ganyscollection:ender_scythe"
+    "x": {
+      "item": "minecraft:diamond"
+    },
+    "y": {
+      "item": "ganyscollection:ender_scythe"
+    }
   },
   "result": {
     "id": "ganyscollection:reinforced_ender_scythe",

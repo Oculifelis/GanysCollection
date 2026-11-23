@@ -31,10 +31,9 @@ import net.neoforged.neoforge.event.entity.player.BonemealEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.registries.datamaps.RegisterDataMapTypesEvent;
-import net.neoforged.neoforge.transfer.ResourceHandler;
-import net.neoforged.neoforge.transfer.item.ItemResource;
-import net.neoforged.neoforge.transfer.item.ItemUtil;
-import org.jspecify.annotations.Nullable;
+import net.neoforged.neoforge.items.IItemHandler;
+import net.neoforged.neoforge.items.ItemHandlerHelper;
+import org.jetbrains.annotations.Nullable;
 
 /** Gany's End game events: inventory tagging, head drops, scythe charging, the endium chestplate and ender flower bone meal. */
 public final class GanysEvents {
@@ -62,25 +61,25 @@ public final class GanysEvents {
             event.setCancellationResult(InteractionResult.SUCCESS);
             return;
         }
-        if (level.getCapability(Capabilities.Item.BLOCK, event.getPos(), null) == null) return;
+        if (level.getCapability(Capabilities.ItemHandler.BLOCK, event.getPos(), null) == null) return;
         stack.set(GanysComponents.TAGGED_INVENTORY.get(), GlobalPos.of(level.dimension(), event.getPos().immutable()));
         event.setCanceled(true);
         event.setCancellationResult(InteractionResult.SUCCESS);
     }
 
     /** The handler a tagged item points at, when it is loaded and in this dimension. */
-    public static @Nullable ResourceHandler<ItemResource> taggedHandler(ItemStack stack, ServerLevel level) {
+    public static @Nullable IItemHandler taggedHandler(ItemStack stack, ServerLevel level) {
         if (!stack.is(GanysTags.INVENTORY_TAGGERS)) return null;
         GlobalPos tag = stack.get(GanysComponents.TAGGED_INVENTORY.get());
         if (tag == null || tag.dimension() != level.dimension() || !level.isLoaded(tag.pos())) return null;
-        return level.getCapability(Capabilities.Item.BLOCK, tag.pos(), null);
+        return level.getCapability(Capabilities.ItemHandler.BLOCK, tag.pos(), null);
     }
 
     /** Moves each drop into the handler; drops that fit whole are removed, the rest keep what is left over. */
-    private static void insert(ResourceHandler<ItemResource> handler, Collection<ItemEntity> drops) {
+    private static void insert(IItemHandler handler, Collection<ItemEntity> drops) {
         for (Iterator<ItemEntity> it = drops.iterator(); it.hasNext(); ) {
             ItemEntity drop = it.next();
-            ItemStack left = ItemUtil.insertItemReturnRemaining(handler, drop.getItem(), false, null);
+            ItemStack left = ItemHandlerHelper.insertItem(handler, drop.getItem(), false);
             if (left.isEmpty()) {
                 it.remove();
                 drop.discard();
@@ -109,20 +108,20 @@ public final class GanysEvents {
                 }
             }
         }
-        ResourceHandler<ItemResource> handler = taggedHandler(weapon, level);
+        IItemHandler handler = taggedHandler(weapon, level);
         if (handler != null) insert(handler, event.getDrops());
     }
 
     private static void addHead(LivingDropsEvent event, LivingEntity victim, MobHead head) {
         ItemStack stack = new ItemStack(head.item());
-        if (victim instanceof Player killed) stack.set(DataComponents.PROFILE, ResolvableProfile.createResolved(killed.getGameProfile()));
+        if (victim instanceof Player killed) stack.set(DataComponents.PROFILE, new ResolvableProfile(killed.getGameProfile()));
         ItemEntity entity = new ItemEntity(victim.level(), victim.getX(), victim.getY(), victim.getZ(), stack);
         entity.setDefaultPickUpDelay();
         event.getDrops().add(entity);
     }
 
     private static void blockDrops(BlockDropsEvent event) {
-        ResourceHandler<ItemResource> handler = taggedHandler(event.getTool(), event.getLevel());
+        IItemHandler handler = taggedHandler(event.getTool(), event.getLevel());
         if (handler != null) insert(handler, event.getDrops());
     }
 
@@ -130,7 +129,8 @@ public final class GanysEvents {
     private static void lightning(EntityStruckByLightningEvent event) {
         if (!(event.getEntity() instanceof Player player) || player.level().isClientSide()) return;
         if (player.getRandom().nextBoolean()) return;
-        for (ItemStack stack : player.getInventory()) {
+        for (int i = 0; i < player.getInventory().getContainerSize(); i++) {
+            ItemStack stack = player.getInventory().getItem(i);
             if (stack.getItem() instanceof EnderScytheItem) EnderScytheItem.setCharges(stack, EnderScytheItem.charges(stack) + 1);
         }
     }

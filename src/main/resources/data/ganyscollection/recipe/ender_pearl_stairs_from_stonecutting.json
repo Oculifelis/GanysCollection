@@ -1,6 +1,8 @@
 {
   "type": "minecraft:stonecutting",
-  "ingredient": "ganyscollection:ender_pearl_block",
+  "ingredient": {
+    "item": "ganyscollection:ender_pearl_block"
+  },
   "result": {
     "id": "ganyscollection:ender_pearl_stairs",
     "count": 1

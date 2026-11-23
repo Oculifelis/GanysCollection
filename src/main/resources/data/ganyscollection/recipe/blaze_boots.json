@@ -6,7 +6,9 @@
     "x x"
   ],
   "key": {
-    "x": "ganyscollection:blaze_ingot"
+    "x": {
+      "item": "ganyscollection:blaze_ingot"
+    }
   },
   "result": {
     "id": "ganyscollection:blaze_boots",

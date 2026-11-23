@@ -7,8 +7,12 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:quartz_berry",
-    "y": "minecraft:glass"
+    "x": {
+      "item": "ganyscollection:quartz_berry"
+    },
+    "y": {
+      "item": "minecraft:glass"
+    }
   },
   "result": {
     "id": "minecraft:quartz",

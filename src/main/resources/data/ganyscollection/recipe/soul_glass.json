@@ -1,7 +1,9 @@
 {
   "type": "minecraft:smelting",
   "category": "misc",
-  "ingredient": "minecraft:soul_sand",
+  "ingredient": {
+    "item": "minecraft:soul_sand"
+  },
   "result": {
     "id": "ganyscollection:soul_glass"
   },

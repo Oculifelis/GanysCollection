@@ -6,7 +6,9 @@
     "xxx"
   ],
   "key": {
-    "x": "ganyscollection:ender_pearl_block"
+    "x": {
+      "item": "ganyscollection:ender_pearl_block"
+    }
   },
   "result": {
     "id": "ganyscollection:ender_pearl_wall",
