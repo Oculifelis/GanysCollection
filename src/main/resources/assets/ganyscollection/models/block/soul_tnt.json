@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "top": "ganyscollection:block/soul_tnt_top",
+    "side": "ganyscollection:block/soul_tnt_side",
+    "bottom": "ganyscollection:block/soul_tnt_bottom"
+  }
+}

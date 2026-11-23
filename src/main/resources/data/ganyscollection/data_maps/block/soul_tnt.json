@@ -1,0 +1,12 @@
+{
+  "values": {
+    "ganyscollection:soul_tnt": {
+      "fuse": 80,
+      "power": 4.0,
+      "fire": true,
+      "slow_range": 2.0,
+      "slow_duration": 3000,
+      "slow_amplifier": 2
+    }
+  }
+}

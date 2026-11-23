@@ -31,6 +31,7 @@ public class GanysCollection {
         GanysSurface.BLOCKS.register(modBus);
         GanysSurface.ITEMS.register(modBus);
         GanysSurface.BLOCK_ENTITIES.register(modBus);
+        GanysSurface.ENTITIES.register(modBus);
         GanysItems.TABS.register(modBus);
         GanysComponents.COMPONENTS.register(modBus);
         GanysEvents.register(modBus);

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xyx",
+    "yxy",
+    "xyx"
+  ],
+  "key": {
+    "x": "minecraft:gunpowder",
+    "y": "minecraft:soul_sand"
+  },
+  "result": {
+    "id": "ganyscollection:soul_tnt",
+    "count": 1
+  }
+}

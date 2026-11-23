@@ -2,6 +2,10 @@ package dev.oculifelis.ganys;
 
 import dev.oculifelis.ganys.block.BlazingCactoidBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
+import dev.oculifelis.ganys.block.SoulTntBlock;
+import dev.oculifelis.ganys.entity.SoulPrimedTnt;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.MobCategory;
 import dev.oculifelis.ganys.block.SoulChestBlock;
 import dev.oculifelis.ganys.block.SoulChestBlockEntity;
 import dev.oculifelis.ganys.block.ChocolateCakeBlock;
@@ -229,6 +233,15 @@ public final class GanysSurface {
     public static final DeferredItem<BlockItem> SOUL_CHEST_ITEM = ITEMS.registerSimpleBlockItem(SOUL_CHEST);
     public static final Supplier<BlockEntityType<SoulChestBlockEntity>> SOUL_CHEST_ENTITY = BLOCK_ENTITIES.register("soul_chest",
             () -> new BlockEntityType<>(SoulChestBlockEntity::new, SOUL_CHEST.get()));
+
+    public static final DeferredRegister.Entities ENTITIES = DeferredRegister.createEntities(GanysCollection.MOD_ID);
+
+    /** Soul TNT: a fiery blast that leaves everything nearby slowed for minutes; numbers in the soul_tnt data map. */
+    public static final DeferredBlock<SoulTntBlock> SOUL_TNT = BLOCKS.registerBlock("soul_tnt", SoulTntBlock::new,
+            () -> Properties.of().mapColor(MapColor.COLOR_BROWN).instabreak().sound(SoundType.GRASS).ignitedByLava());
+    public static final DeferredItem<BlockItem> SOUL_TNT_ITEM = ITEMS.registerSimpleBlockItem(SOUL_TNT);
+    public static final Supplier<EntityType<SoulPrimedTnt>> SOUL_TNT_ENTITY = ENTITIES.registerEntityType("soul_tnt",
+            SoulPrimedTnt::new, MobCategory.MISC, b -> b.sized(0.98F, 0.98F).fireImmune().clientTrackingRange(10).updateInterval(10));
 
     private static Consumable.Builder tea() {
         return Consumables.defaultDrink().consumeSeconds(1.75F);

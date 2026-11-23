@@ -5,6 +5,7 @@ import dev.oculifelis.ganys.GanysSurface;
 import dev.oculifelis.ganys.item.EndiumBowItem;
 import dev.oculifelis.ganys.block.ColouredRedstoneWireBlock;
 import java.util.List;
+import net.minecraft.client.renderer.entity.TntRenderer;
 import java.util.Set;
 import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -29,6 +30,7 @@ public final class GanysClient {
 
     private static void renderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(GanysSurface.SOUL_CHEST_ENTITY.get(), SoulChestRenderer::new);
+        event.registerEntityRenderer(GanysSurface.SOUL_TNT_ENTITY.get(), TntRenderer::new);
     }
 
     /** Leaf walls take the tint of the leaf they are made from; coloured dust takes its dye colour, dimmed by power. */
