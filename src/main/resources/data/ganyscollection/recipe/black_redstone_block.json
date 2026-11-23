@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:black_redstone"
+  },
+  "result": {
+    "id": "ganyscollection:black_redstone_block",
+    "count": 1
+  }
+}

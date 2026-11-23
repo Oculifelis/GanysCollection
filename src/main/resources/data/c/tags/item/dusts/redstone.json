@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "ganyscollection:white_redstone",
+    "ganyscollection:orange_redstone",
+    "ganyscollection:magenta_redstone",
+    "ganyscollection:light_blue_redstone",
+    "ganyscollection:yellow_redstone",
+    "ganyscollection:lime_redstone",
+    "ganyscollection:pink_redstone",
+    "ganyscollection:gray_redstone",
+    "ganyscollection:light_gray_redstone",
+    "ganyscollection:cyan_redstone",
+    "ganyscollection:purple_redstone",
+    "ganyscollection:blue_redstone",
+    "ganyscollection:brown_redstone",
+    "ganyscollection:green_redstone",
+    "ganyscollection:black_redstone"
+  ]
+}

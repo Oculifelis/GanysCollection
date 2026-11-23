@@ -3,7 +3,14 @@ package dev.oculifelis.ganys.client;
 import dev.oculifelis.ganys.GanysItems;
 import dev.oculifelis.ganys.GanysSurface;
 import dev.oculifelis.ganys.item.EndiumBowItem;
+import dev.oculifelis.ganys.block.ColouredRedstoneWireBlock;
+import java.util.List;
+import java.util.Set;
+import net.minecraft.client.color.block.BlockTintSource;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.level.block.RedStoneWireBlock;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.bus.api.IEventBus;
@@ -18,10 +25,21 @@ public final class GanysClient {
         NeoForge.EVENT_BUS.addListener(GanysClient::fov);
     }
 
-    /** Leaf walls take the tint of the leaf they are made from. */
+    /** Leaf walls take the tint of the leaf they are made from; coloured dust takes its dye colour, dimmed by power. */
     private static void tints(RegisterColorHandlersEvent.BlockTintSources event) {
         GanysSurface.LEAF_WALLS.forEach((leaf, wall) ->
                 event.register(event.getBlockColors().getTintSources(leaf.defaultBlockState()), wall.get()));
+        GanysSurface.COLOURED_WIRES.values().forEach(wire -> event.register(List.of(new BlockTintSource() {
+            @Override
+            public int color(BlockState state) {
+                return ((ColouredRedstoneWireBlock) state.getBlock()).colourForPower(state.getValue(RedStoneWireBlock.POWER));
+            }
+
+            @Override
+            public Set<Property<?>> relevantProperties() {
+                return Set.of(RedStoneWireBlock.POWER);
+            }
+        }), wire.get()));
     }
 
     /** Endium leggings keep sprinting from widening the view; drawing an endium bow zooms in. */

@@ -74,6 +74,21 @@
     "ganyscollection:blaze_block",
     "ganyscollection:charcoal_block",
     "ganyscollection:inverted_redstone_lamp",
-    "ganyscollection:block_detector"
+    "ganyscollection:block_detector",
+    "ganyscollection:white_redstone_block",
+    "ganyscollection:orange_redstone_block",
+    "ganyscollection:magenta_redstone_block",
+    "ganyscollection:light_blue_redstone_block",
+    "ganyscollection:yellow_redstone_block",
+    "ganyscollection:lime_redstone_block",
+    "ganyscollection:pink_redstone_block",
+    "ganyscollection:gray_redstone_block",
+    "ganyscollection:light_gray_redstone_block",
+    "ganyscollection:cyan_redstone_block",
+    "ganyscollection:purple_redstone_block",
+    "ganyscollection:blue_redstone_block",
+    "ganyscollection:brown_redstone_block",
+    "ganyscollection:green_redstone_block",
+    "ganyscollection:black_redstone_block"
   ]
 }

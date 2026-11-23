@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:lime_redstone_block"
+  ],
+  "result": {
+    "id": "ganyscollection:lime_redstone",
+    "count": 9
+  }
+}

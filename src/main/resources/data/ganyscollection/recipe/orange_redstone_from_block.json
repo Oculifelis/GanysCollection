@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "ganyscollection:orange_redstone_block"
+  ],
+  "result": {
+    "id": "ganyscollection:orange_redstone",
+    "count": 9
+  }
+}

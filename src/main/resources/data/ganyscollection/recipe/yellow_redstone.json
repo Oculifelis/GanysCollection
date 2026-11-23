@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xyx",
+    "xxx"
+  ],
+  "key": {
+    "x": "#c:dusts/redstone",
+    "y": "#c:dyes/yellow"
+  },
+  "result": {
+    "id": "ganyscollection:yellow_redstone",
+    "count": 8
+  }
+}

@@ -3,6 +3,9 @@ package dev.oculifelis.ganys;
 import dev.oculifelis.ganys.block.BlockDetectorBlock;
 import dev.oculifelis.ganys.block.BlockDetectorBlockEntity;
 import dev.oculifelis.ganys.block.CamelliaCropBlock;
+import dev.oculifelis.ganys.block.ColouredRedstoneBlock;
+import dev.oculifelis.ganys.block.ColouredRedstoneWireBlock;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WallBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -133,6 +136,26 @@ public final class GanysSurface {
                     () -> Properties.of().mapColor(c.getMapColor()).strength(0.8F).sound(SoundType.SAND));
             DYE_BLOCKS.put(c, b);
             DYE_BLOCK_ITEMS.put(c, ITEMS.registerSimpleBlockItem(b));
+        }
+    }
+
+    // coloured redstone: dust and blocks per dye colour (red is vanilla), each colour its own circuit
+    public static final Map<DyeColor, DeferredBlock<ColouredRedstoneWireBlock>> COLOURED_WIRES = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredItem<BlockItem>> COLOURED_REDSTONE = new EnumMap<>(DyeColor.class);
+    public static final Map<DyeColor, DeferredBlock<ColouredRedstoneBlock>> COLOURED_REDSTONE_BLOCKS = new EnumMap<>(DyeColor.class);
+
+    static {
+        for (DyeColor c : DyeColor.values()) {
+            if (c == DyeColor.RED) continue;
+            DeferredBlock<ColouredRedstoneWireBlock> wire = BLOCKS.registerBlock(c.getName() + "_redstone_wire",
+                    p -> new ColouredRedstoneWireBlock(c, p), () -> Properties.of().noCollision().instabreak().pushReaction(PushReaction.DESTROY));
+            COLOURED_WIRES.put(c, wire);
+            COLOURED_REDSTONE.put(c, ITEMS.registerItem(c.getName() + "_redstone", p -> new BlockItem(wire.get(), p), p -> p.useItemDescriptionPrefix()));
+            DeferredBlock<ColouredRedstoneBlock> block = BLOCKS.registerBlock(c.getName() + "_redstone_block",
+                    p -> new ColouredRedstoneBlock(c, p), () -> Properties.of().mapColor(c.getMapColor()).requiresCorrectToolForDrops()
+                            .strength(5.0F, 6.0F).sound(SoundType.METAL).isRedstoneConductor((st, lv, ps) -> false));
+            COLOURED_REDSTONE_BLOCKS.put(c, block);
+            ITEMS.registerSimpleBlockItem(block);
         }
     }
 

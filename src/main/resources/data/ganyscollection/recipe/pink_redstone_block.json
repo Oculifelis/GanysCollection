@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": "ganyscollection:pink_redstone"
+  },
+  "result": {
+    "id": "ganyscollection:pink_redstone_block",
+    "count": 1
+  }
+}
