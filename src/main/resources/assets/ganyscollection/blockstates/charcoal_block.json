@@ -1,7 +1,18 @@
 {
   "variants": {
-    "": {
-      "model": "ganyscollection:block/charcoal_block"
-    }
+    "": [
+      {
+        "model": "ganyscollection:block/charcoal_block"
+      },
+      {
+        "model": "ganyscollection:block/charcoal_block_2"
+      },
+      {
+        "model": "ganyscollection:block/charcoal_block_3"
+      },
+      {
+        "model": "ganyscollection:block/charcoal_block_4"
+      }
+    ]
   }
 }
